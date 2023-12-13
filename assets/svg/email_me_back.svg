@@ -1,0 +1,17 @@
+<svg id="Layer_1" data-name="Layer 1" 
+	xmlns="http://www.w3.org/2000/svg" viewbox="0 0 25.6 18.14">
+	<defs>
+		<clipPath id="clip-path" transform="translate(-1177.89 -391.43)">
+			<path fill="none" d="M0 0h1920v1080H0z" />
+		</clipPath>
+		<linearGradient xmlns="http://www.w3.org/2000/svg" id="grad1" x1="0%" x2="99.982%" y1="52.818%" y2="52.818%">
+			<stop offset="0%" stop-color="#FF8232" />
+			<stop offset="99.982%" stop-color="#4C0051" />
+		</linearGradient>
+	</defs>
+	<g clip-path="url(#clip-path)" fill="url(#grad1)">
+		<path class="cls-3" d="M1200.82 409.57h-20.26a2.68 2.68 0 01-2.67-2.67V393a1.61 1.61 0 011.61-1.6h22.39a1.6 1.6 0 011.6 1.6v13.9a2.67 2.67 0 01-2.67 2.67m-21.32-17.06a.52.52 0 00-.53.52v13.87a1.59 1.59 0 001.59 1.59h20.26a1.6 1.6 0 001.6-1.59V393a.52.52 0 00-.53-.52z" transform="translate(-1177.89 -391.43)" />
+		<path class="cls-3" d="M1190.69 401.56a3.76 3.76 0 01-2.36-.8l-9.9-8.1a.54.54 0 01-.07-.76.53.53 0 01.75-.07l9.9 8.1a2.84 2.84 0 003.37 0l9.89-8.1a.54.54 0 11.69.83l-9.9 8.1a3.77 3.77 0 01-2.37.8" transform="translate(-1177.89 -391.43)" />
+		<path class="cls-3" d="M1197.62 405.3a.54.54 0 01-.38-.16l-4.26-4.26a.54.54 0 01.76-.76l4.27 4.26a.54.54 0 010 .76.54.54 0 01-.39.16M1183.76 405.3a.52.52 0 01-.38-.16.54.54 0 010-.76l4.27-4.26a.54.54 0 11.76.76l-4.27 4.26a.51.51 0 01-.38.16" transform="translate(-1177.89 -391.43)" />
+	</g>
+</svg>

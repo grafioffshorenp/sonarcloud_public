@@ -1,0 +1,107 @@
+// BASIC QUERIES
+@mixin tablet {
+  @media only screen and (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape {
+  @media only screen and (min-width: #{$tablet-landscape}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin widescreen {
+  @media only screen and (min-width: #{$widescreen}) {
+    @content;
+  }
+}
+
+@mixin desktop-big {
+  @media only screen and (min-width: #{$desktop-big}) {
+    @content;
+  }
+}
+
+// DEVICE ONLY QUERIES
+@mixin mobile-only {
+  @media only screen and (max-width: #{$tablet - 1}) {
+    @content;
+  }
+}
+
+@mixin until-desktop {
+  @media only screen and (max-width: #{$desktop - 1}) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media only screen and (min-width: #{$tablet}) and (max-width: #{$desktop - 1}) {
+    @content;
+  }
+}
+
+@mixin desktop-only {
+  @media only screen and (min-width: #{$desktop}) and (max-width: #{$widescreen - 1}) {
+    @content;
+  }
+}
+
+@mixin widescreen-only {
+  @media only screen and (min-width: #{$widescreen}) and (max-width: #{$desktop-big - 1}) {
+    @content;
+  }
+}
+
+@mixin until-widescreen {
+  @media only screen and (max-width: #{$widescreen - 1}) {
+    @content;
+  }
+}
+
+@mixin desktop-big-only {
+  @media only screen and (min-width: #{$desktop-big}) {
+    @content;
+  }
+}
+
+/// solution for interpolation of mixin names (which is not allowed)
+/// @param {String} $breakponit
+$media-query-list: mobile, tablet, tablet-landscape, desktop, widescreen, desktop-big;
+
+@mixin media-query($breakpoint) {
+  @if not index($media-query-list, $breakpoint) {
+    @error "#{$breakpoint} is not a valid breakpoint.";
+  } @else if $breakpoint== "mobile" {
+    @include mobile {
+      @content;
+    }
+  } @else if $breakpoint== "tablet" {
+    @include tablet {
+      @content;
+    }
+  } @else if $breakpoint== "tablet-landscape" {
+    @include tablet-landscape {
+      @content;
+    }
+  } @else if $breakpoint== "desktop" {
+    @include desktop {
+      @content;
+    }
+  } @else if $breakpoint== "widescreen" {
+    @include widescreen {
+      @content;
+    }
+  } @else if $breakpoint== "desktop-big" {
+    @include desktop-big {
+      @content;
+    }
+  }
+}

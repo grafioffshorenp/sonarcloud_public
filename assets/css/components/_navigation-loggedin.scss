@@ -1,0 +1,211 @@
+nav.logged-in {
+  background: $white;
+  padding: 8px 24px 0 24px;
+  position: relative;
+  z-index: $z-index-nav;
+  margin-bottom: 4px;
+
+  + .toggled {
+    &::after {
+      display: none;
+    }
+  }
+
+  @include tablet {
+    padding: 16px 32px 0 32px;
+  }
+
+  @include desktop {
+    padding: 16px 32px;
+  }
+
+  ~ .main-header {
+    padding-top: 32px;
+
+    @include until-tablet {
+      min-height: 108px;
+    }
+
+    @include tablet {
+      padding-top: 80px;
+    }
+  }
+
+  ~ .main-header--account {
+    @include until-tablet {
+      min-height: 36px;
+    }
+
+    @include tablet {
+      padding-top: 36px;
+    }
+
+    @include desktop {
+      padding-top: 80px;
+    }
+  }
+
+  .picture {
+    @include until-desktop {
+      display: none;
+    }
+  }
+
+  .nav__inner {
+    flex-direction: column;
+    margin: 0 auto;
+
+    @include desktop {
+      flex-direction: row;
+    }
+  }
+
+  .nav__wrapper {
+    display: flex;
+    flex-direction: row;
+
+    > ul {
+      list-style-type: none;
+    }
+  }
+
+  .nav__inner:not(.toggled) {
+    ul {
+      flex-direction: row;
+      // align-items: stretch;
+      margin-bottom: -1px;
+
+      li {
+        display: flex;
+        padding: 0 6px;
+        position: relative;
+
+        @include desktop {
+          padding: 0;
+        }
+
+        &.hide-until-desktop {
+          @include until-desktop {
+            display: none;
+          }
+        }
+
+        &.border-right:after {
+          content: "";
+          border-right: 1px solid rgba($lightest-grey, 0.5);
+          height: 24px;
+          position: absolute;
+          right: 0;
+          top: 12px;
+          width: 1px;
+
+          @include tablet {
+            height: 36px;
+            top: 20px;
+          }
+
+          @include desktop {
+            display: none;
+          }
+        }
+
+        a:not(.locations-dropdown__option):not(.btn) {
+          @include desktop {
+            font-weight: 500;
+            min-height: 48px;
+          }
+        }
+
+        a:not(.btn) {
+          align-items: center;
+          display: flex;
+          font-size: 12px;
+          padding: 9px 7px;
+
+          @include until-desktop {
+            align-items: center;
+            border-bottom: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+          }
+
+          @include tablet {
+            font-size: 16px;
+            padding: 16px 16px;
+          }
+
+          @include desktop {
+            padding: 0;
+          }
+
+          .picture {
+            box-shadow: inset 0 0 8px 0 rgba(0, 0, 0, 0.5);
+            display: none;
+            margin-left: 16px;
+
+            @include desktop {
+              display: flex;
+            }
+          }
+
+          .img {
+            box-shadow: none;
+          }
+
+          .icon {
+            font-size: 20px;
+            margin-bottom: 4px;
+
+            @include tablet {
+              font-size: 24px;
+            }
+
+            @include desktop {
+              display: none;
+            }
+          }
+
+          .badge {
+            font-family: $secondary-font;
+            font-weight: 400;
+            font-size: 12px;
+            height: 16px;
+            min-height: 0;
+            padding: 0;
+            position: absolute;
+            left: calc(50% + 4px);
+            top: 3px;
+            width: 16px;
+
+            @include tablet {
+              top: 12px;
+            }
+
+            @include desktop {
+              left: auto;
+              right: -16px;
+              top: 7px;
+            }
+          }
+        }
+      }
+
+      li:not(.active):not(.locations-dropdown) {
+        a:not(.btn),
+        .t-nav__summary
+        {
+          font-family: $font-sub-title;
+          font-weight: 500;
+          color: $teal-dark;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+
+          @include on-event {
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+}

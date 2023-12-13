@@ -1,0 +1,397 @@
+// Colors
+.color-first {
+  color: $color-first;
+}
+
+.color-second {
+  color: $color-second;
+}
+
+.color-third {
+  color: $color-third;
+}
+
+.color-fifth {
+  color: $color-fifth;
+}
+
+// Grid
+.row,
+.inner-row--large,
+.inner-row--small,
+.inner-row--smaller,
+.inner-row--smallest {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.inner-row--large,
+.inner-row--small,
+.inner-row--smaller,
+.inner-row--smallest {
+  max-width: $inner-row--mobile;
+
+  @include tablet {
+    max-width: none;
+  }
+}
+
+.row {
+  background: $white;
+  padding: 0;
+  position: relative;
+
+  @include desktop {
+    max-width: $row;
+  }
+}
+
+.inner-row--large,
+.inner-row--small {
+  padding: 0 $row-padding;
+
+  @include tablet {
+    padding: 0 $row-padding-tablet;
+  }
+
+  @include desktop {
+    padding: 0 $row-padding-desktop;
+  }
+
+  @include desktop-wide {
+    padding: 0 $row-padding-desktop-wide;
+  }
+}
+
+.inner-row--large {
+  @include desktop {
+    max-width: $inner-row--large;
+  }
+}
+
+.inner-row--small {
+  @include desktop {
+    max-width: $inner-row--small;
+  }
+}
+
+.inner-row--smaller {
+  padding: 0 $row-padding;
+
+  @include tablet {
+    padding: 0 $row-padding-tablet;
+  }
+
+  @include desktop {
+    max-width: $inner-row--smaller;
+  }
+}
+
+.inner-row--smallest {
+  padding: 0 $row-padding;
+
+  @include tablet {
+    padding: 0 $row-padding-tablet;
+  }
+
+  @include desktop {
+    max-width: $inner-row--smallest;
+  }
+}
+
+.inner-row--double {
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    flex-direction: row;
+  }
+}
+
+.inner-row--columns {
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .column {
+    background-color: $white;
+    border-radius: 6px;
+    box-shadow: $box-shadow;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex: 1;
+    margin-bottom: 24px;
+    order: 1;
+    width: 100%;
+
+    @include tablet {
+      margin-left: 32px;
+      margin-right: 32px;
+      margin-bottom: 0;
+    }
+
+    &__content {
+      padding: 40px;
+    }
+
+    @include tablet {
+      width: calc(50% - 16px);
+    }
+
+    @include desktop {
+      width: calc(50% - 24px);
+    }
+
+    @include desktop-wide {
+      width: calc(50% - 48px);
+    }
+  }
+}
+
+.align-center {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.disabled {
+  color: $paragraph-disabled;
+}
+
+.pre-line,
+.pre-line p {
+  white-space: pre-line;
+}
+
+.hide-on-load {
+  display: none;
+}
+
+.show-after-load {
+  display: block;
+}
+
+.picture {
+  align-items: center;
+  border-radius: 50%;
+  height: 40px;
+  justify-content: center;
+  width: 40px;
+
+  &.picture--small-plus {
+    height: 50px;
+    width: 50px;
+
+    &.picture--enlarged {
+      left: 50px;
+    }
+  }
+
+  &.picture--medium {
+    height: 64px;
+    width: 64px;
+
+    &.picture--enlarged {
+      left: 64px;
+    }
+  }
+
+  &.picture--large {
+    border: 2px solid $white;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+    height: 160px;
+    width: 160px;
+
+    &.picture--enlarged {
+      left: 160px;
+    }
+  }
+
+  &.picture--enlarged {
+    @include youbahn-shape-180-deg(270px);
+
+    border: 2px solid $white;
+    box-shadow: 0 2px 44px 0 $bg-color-light;
+    cursor: default;
+    left: 40px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+  }
+
+  &--big {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+.bg-fallback-employee,
+.bg-fallback-employer {
+  background-color: $bg-color-light;
+  background-size: cover;
+
+  &--opaque-bg {
+    background-color: $bg-color-light-opaque;
+  }
+
+  &--darker-bg {
+    background-color: $bg-color-darker;
+  }
+}
+
+.bg-fallback-employee {
+  background-image: url("data:image/svg+xml, #{svg-replace($icon-employee-fallback, $icon-color)}");
+}
+
+.bg-fallback-employer {
+  background-image: url("data:image/svg+xml, #{svg-replace($icon-employer-fallback, $icon-color)}");
+}
+
+// Icons
+[class^="icon--"] {
+  display: inline-flex;
+  align-items: center;
+}
+
+.icon--phone {
+  &:before {
+    transform: translateY(3px);
+    display: inline-block;
+    content: url("data:image/svg+xml, #{svg-replace($icon-phone, $icon-color)}");
+  }
+}
+
+.icon--mail {
+  &:before {
+    transform: translateY(3px);
+    display: inline-block;
+    content: url("data:image/svg+xml, #{svg-replace($icon-mail, $icon-color)}");
+  }
+}
+
+.icon--facebook {
+  &:before {
+    transform: translateY(3px);
+    display: inline-block;
+    content: url("data:image/svg+xml, #{svg-replace($icon-facebook, $icon-color)}");
+  }
+}
+
+.icon--instagram {
+  &:before {
+    transform: translateY(3px);
+    display: inline-block;
+    content: url("data:image/svg+xml, #{svg-replace($icon-instagram, $icon-color)}");
+  }
+}
+
+.icon--linkedin {
+  &:before {
+    transform: translateY(3px);
+    display: inline-block;
+    content: url("data:image/svg+xml, #{svg-replace($icon-linkedin, $icon-color)}");
+  }
+}
+
+.icon--whatsapp {
+  &:before {
+    transform: translateY(3px);
+    display: inline-block;
+    content: url("data:image/svg+xml, #{svg-replace($icon-whatsapp, $icon-color)}");
+  }
+}
+
+.icon--twitter {
+  &:before {
+    transform: translateY(3px);
+    display: inline-block;
+    content: url("data:image/svg+xml, #{svg-replace($icon-twitter, $icon-color)}");
+  }
+}
+
+.u-d-none {
+  display: none;
+}
+
+.u-d-none-mobile {
+  @include until-tablet {
+    display: none;
+  }
+}
+
+.u-d-none-tablet {
+  @include tablet {
+    display: none;
+  }
+}
+
+.u-d-flex-mobile {
+  @include mobile-only {
+    display: flex;
+  }
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.mobile-line-break {
+  @include tablet {
+    display: none;
+  }
+}
+
+.desktop-only {
+  @include until-desktop {
+    display: none;
+  }
+}
+
+.until-desktop-only {
+  @include desktop {
+    display: none;
+  }
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.u-min-height-100vh {
+  min-height: 100vh;
+}
+
+.u-d-flex-column {
+  display: flex;
+  flex-direction: column;
+}

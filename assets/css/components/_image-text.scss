@@ -1,0 +1,174 @@
+.c-text-with-image {
+  position: relative;
+
+  padding: 3.5rem 0;
+  margin: 6.25rem 0;
+
+  @include desktop {
+    margin: 5rem 0;
+  }
+
+  &--no-margin {
+    margin: 0;
+
+    @include desktop {
+      margin: 0;
+    }
+  }
+}
+
+.c-text-with-image__background {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+
+  height: 80%;
+  width: 100%;
+
+  background-color: $background;
+
+  &--image-right {
+    left: 0;
+
+    border-radius: 0 $container-radius $container-radius 0;
+  }
+
+  &--image-left {
+    right: 0;
+
+    border-radius: $container-radius 0 0 $container-radius;
+  }
+
+  @include desktop {
+    height: 100%;
+    width: 60%;
+  }
+}
+
+.c-text-with-image__content {
+  padding: 1rem 0;
+
+  @include desktop {
+    max-width: 460px;
+    margin-right: 1.5rem;
+  }
+}
+
+.c-text-with-image__inner {
+  display: flex;
+  flex-direction: column;
+
+  @include desktop {
+    align-items: stretch;
+  }
+
+  &--image-right {
+    @include desktop {
+      flex-direction: row;
+    }
+  }
+
+  &--image-left {
+    @include desktop {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &--text-large {
+    .c-text-with-image__title {
+      font-size: 48px;
+      line-height: 50px;
+
+      @include desktop {
+        font-size: 54px;
+        line-height: 56px;
+      }
+    }
+  }
+
+  @include desktop {
+    justify-content: space-between;
+  }
+}
+
+.c-text-with-image__title {
+  font-family: $font-title;
+  color: $blue;
+
+  strong {
+    color: $orange;
+  }
+}
+
+.c-text-with-image__text {
+  margin-top: 1rem;
+
+  color: $teal-dark;
+
+  @include desktop {
+    margin-top: 2.5rem;
+  }
+}
+.c-text-with-image__image-container {
+  display: flex;
+
+  max-height: 260px;
+  overflow: hidden;
+
+  @include tablet {
+    max-height: 530px;
+  }
+
+  @include desktop {
+    width: 668px;
+    max-height: 800px;
+
+    &--image-right {
+      margin-left: 2.5rem;
+    }
+
+    &--image-left {
+      margin-right: 2.5rem;
+    }
+  }
+}
+
+.c-text-with-image__image {
+  margin-top: 1.2rem;
+
+  img,
+  picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+
+    border-radius: $container-radius;
+  }
+
+  @include desktop {
+    display: block;
+
+    margin: 0;
+  }
+}
+
+.c-text-with-image__footer {
+  display: flex;
+
+  margin-top: 1.5rem;
+}
+
+.c-text-with-image__footer-text {
+  font-family: $font-title;
+  color: $teal-dark;
+}
+
+.c-text-with-image__footer-image {
+  max-width: 100px;
+  margin-right: 1rem;
+}
+
+.c-text-with-image__button-container {
+  margin-top: 1.5rem;
+}

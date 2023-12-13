@@ -1,0 +1,195 @@
+label,
+.input-wrapper label {
+  color: $label-color;
+  display: flex;
+  font-size: $label__font-size;
+  line-height: 160%;
+  margin-bottom: 8px;
+  margin-top: 0;
+  position: relative;
+
+  &.label--primary {
+    font-family: $primary-font;
+    color: $anchor-color;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  &.label--increased-spacing {
+    margin-bottom: 16px;
+  }
+
+  &.inline-label {
+    display: inline-block;
+    margin-right: 16px;
+  }
+
+  &.required {
+    &:after {
+      content: "*";
+      color: $label-color-required;
+      cursor: text;
+      margin-left: 3px;
+    }
+  }
+
+  &.btn {
+    color: $white;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  a {
+    color: $dark-grey;
+  }
+
+  .asterix {
+    margin-left: 5px;
+  }
+
+  br {
+    display: none;
+  }
+
+  p,
+  p:last-of-type {
+    color: inherit;
+    line-height: inherit;
+    margin: 0;
+  }
+
+  @include tablet {
+    font-size: $label__font-size--tablet;
+  }
+}
+
+.label__text {
+  &.has-description {
+    .label__text--title {
+      color: $color-first;
+      font-weight: 500;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .label__text--description {
+      font-size: 0.875em;
+      line-height: 1.14;
+    }
+    .label__text--subdescription {
+      font-size: 0.875em;
+      line-height: 1.14;
+      // margin-top: 5px;
+    }
+  }
+}
+
+.input-wrapper {
+  textarea ~ label,
+  input ~ label,
+  select ~ label {
+    color: lighten($grey, 30%);
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    left: 16px;
+    margin: 0;
+    max-width: calc(100% - 32px);
+    padding: 1px 2px;
+    pointer-events: none;
+    position: absolute;
+    top: 18px;
+    transition: all 0.1s ease;
+    user-select: none;
+
+    &:hover {
+      cursor: text;
+    }
+
+    @include desktop {
+      top: 19px;
+    }
+  }
+
+  input:not([type="checkbox"]):not([type="radio"]) ~ label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  textarea:focus ~ label,
+  textarea:not(:placeholder-shown) ~ label,
+  input:focus ~ label,
+  input:not(:placeholder-shown) ~ label,
+  input:disabled ~ label,
+  input[readonly] ~ label,
+  select ~ label {
+    color: $label-color;
+    font-size: 13px;
+    line-height: 1;
+    top: -6px;
+    transition: color 0.2s ease;
+    text-shadow: $label-text-shadow;
+
+    a {
+      text-shadow: none;
+    }
+  }
+
+  textarea:focus ~ label,
+  input:focus ~ label {
+    color: $label-color-focus;
+  }
+
+  input:disabled ~ label,
+  input[readonly] ~ label,
+  select:disabled ~ label {
+    background: transparent;
+    color: $grey;
+    top: 7px;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    + label {
+      pointer-events: auto;
+    }
+  }
+
+  &.input--has-error,
+  .input--has-error {
+    textarea ~ label,
+    input ~ label {
+      color: $label-color-error;
+
+      &:after {
+        color: $label-color-error;
+      }
+    }
+  }
+}
+
+.c-pill {
+  color: $pill-color !important;
+  background-color: $pill-color-background !important;
+  padding-top: 8px;
+  padding-right: 16px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  border-radius: 5px;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &--selected {
+    color: $pill-color-selected !important;
+    background-color: $pill-color-background-selected !important;
+  }
+}

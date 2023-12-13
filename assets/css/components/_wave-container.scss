@@ -1,0 +1,19 @@
+.c-wave-container__svg {
+  display: block;
+
+  width: 100%;
+
+  &--mobile {
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+  }
+}

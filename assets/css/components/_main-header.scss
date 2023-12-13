@@ -1,0 +1,173 @@
+.c-main-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  position: relative;
+
+  min-height: 530px;
+}
+
+.c-main-header__inner {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+
+  @include desktop {
+    height: 650px;
+  }
+}
+
+.c-main-header__content {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+
+  padding: 0 0 6rem;
+  max-width: 600px;
+
+  @include desktop {
+    padding: 0 1.375rem 12rem;
+    margin-right: 2rem;
+  }
+
+  @include widescreen {
+    padding: 0 0 12rem;
+  }
+}
+
+.c-main-header__search-form {
+  position: relative;
+
+  margin-top: 1.5rem;
+}
+
+.c-main-header__title {
+  padding-top: 1rem;
+  max-width: 440px;
+
+  font-family: $font-sub-title;
+  color: $white;
+}
+
+.c-main-header__text {
+  margin-top: 1rem;
+  max-width: 440px;
+}
+
+.c-main-header__image-container {
+  display: none;
+
+  @include desktop {
+    display: block;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+
+    height: 100%;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  @media (min-width: $navigation-breakpoint) {
+    max-width: 520px;
+  }
+
+  @media (min-width: $navigation-breakpoint-wide) {
+    max-width: 500px;
+  }
+}
+
+.c-main-header__image {
+  > img,
+  > picture {
+    display: none;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    @include desktop {
+      display: block;
+    }
+  }
+}
+
+.c-main-header__wave-container {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+
+  @include desktop {
+    height: 650px;
+
+    // Fill remaining whitespace a with blue background
+    &::before {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      width: 50%;
+      height: 551px;
+
+      background-color: $blue;
+    }
+
+    @media (min-width: $navigation-breakpoint) {
+      &::after {
+        content: "";
+
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: -1;
+
+        width: 50%;
+        height: 536px;
+
+        background-color: $blue;
+      }
+    }
+
+    @include widescreen {
+      &::after {
+        height: 548px;
+      }
+    }
+  }
+}
+
+.c-main-header__wave-container-inner {
+  position: relative;
+
+  @include desktop {
+    max-width: $widescreen;
+
+    clip-path: url("#clipPath");
+    background-color: $blue;
+  }
+
+  @include widescreen {
+    max-width: $container-wide;
+    margin: 0 auto;
+  }
+}
+
+.c-main-header__cta {
+  margin-top: 1.5rem;
+
+  @include tablet {
+    max-width: 330px;
+  }
+}

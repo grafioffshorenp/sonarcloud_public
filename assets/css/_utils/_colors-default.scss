@@ -1,0 +1,37 @@
+/* Theme Colors */
+$color-first: #333333;
+$color-first-light: #6f6f6f;
+$color-first-alt: #cccccc;
+$color-second: $blue;
+$color-second-alt: $blue-dark;
+$color-second-light: $blue-light;
+$color-third: $orange;
+$color-fourth: $teal-dark;
+$color-fifth: $blue;
+$color-sixth: $green;
+
+/* Status Colors */
+$color-success: $green;
+$color-success-alt: $color-second;
+$color-warning: rgba($orange, 0.3);
+$color-error: #ff3f3f;
+$color-error-alt: $color-second;
+
+/* Neutral Colors */
+$white: #fff;
+$grey: #6f6f6f;
+$dark-grey: #414141;
+$light-grey: rgba($grey, 0.5);
+$lightest-grey: #eeeeee;
+$lightest-grey-alt: #f5f5f5;
+
+/* Gradient Colors */
+$gradient-start: #ff6047;
+$gradient-second: #f5877f;
+$gradient-third: #e3b1e3;
+$gradient-end: #95e1fc;
+
+// Template variables
+$font-color-dark: $dark-grey;
+
+$color-greyed-out: #ccc;

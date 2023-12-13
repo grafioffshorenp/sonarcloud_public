@@ -1,0 +1,74 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  overflow-x: hidden;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+  font-family: $font-body;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $teal-dark;
+
+  transition: 0.2s color;
+
+  word-break: break-word;
+
+  &:hover {
+    color: $blue;
+  }
+}
+
+html.disable-scroll {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto !important;
+}
+
+
+.display-none {
+  display: none !important;
+}
+.ais-NumericMenu-radio:checked::after {
+  background-color: inherit !important;
+}
+input.ais-NumericMenu-radio:focus,
+input.ais-RefinementList-checkbox:focus {
+  box-shadow: none;
+}

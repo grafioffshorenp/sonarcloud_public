@@ -1,0 +1,57 @@
+.modal {
+  .application-form {
+    width: 100%;
+
+    textarea:focus ~ label {
+      background-color: $white;
+    }
+  }
+
+  .application-form,
+  .tab__page,
+  .tab__page.active,
+  form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    .input-row:last-of-type,
+    .btn {
+      margin-top: 0;
+    }
+
+    .input-row:last-of-type .input-wrapper {
+      margin: 0;
+    }
+  }
+
+  .application-form__centered {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+
+    ul {
+      list-style: none;
+      margin-bottom: 24px;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 220px;
+
+      li {
+        font-weight: bold;
+        line-height: 133%;
+        margin: 0;
+        text-align: left;
+
+        &:not(:last-of-type) {
+          margin-bottom: 8px;
+        }
+
+        &:before {
+          content: "- ";
+        }
+      }
+    }
+  }
+}

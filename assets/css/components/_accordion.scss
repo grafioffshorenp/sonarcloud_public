@@ -1,0 +1,35 @@
+.accordion {
+  margin: 32px auto 90px auto;
+  max-width: $inner-row--small;
+
+  list-style: none;
+
+  @include tablet {
+    margin-top: 45px;
+  }
+
+  &__panel {
+    border-radius: 6px;
+    box-shadow: $box-shadow;
+    margin-bottom: 20px;
+    padding: 20px;
+
+    @include tablet {
+      padding: 32px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  h3 {
+    color: $teal-dark;
+    line-height: 130%;
+  }
+
+  &__body {
+    padding-top: 16px;
+    width: calc(100% - 32px);
+  }
+}

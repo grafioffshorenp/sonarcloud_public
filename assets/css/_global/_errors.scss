@@ -1,0 +1,96 @@
+.input--has-error {
+  label.required:after,
+  .instructions {
+    color: $color-error;
+  }
+
+  input[type="date"],
+  input[type="datetime"],
+  input[type="time"],
+  input[type="email"],
+  input[type="text"],
+  input[type="number"],
+  input[type="password"],
+  input[type="phone"],
+  textarea {
+    border-color: $color-error;
+
+    &:focus,
+    &:hover {
+      border-color: $color-error;
+    }
+  }
+}
+
+ul.error-list {
+  margin: 0;
+
+  .error-list__message {
+    margin-bottom: 16px;
+    margin-left: 16px;
+  }
+}
+
+.error-message,
+.error-message p,
+.error-message:last-of-type,
+ul.error-list .error-list__message {
+  color: $color-error;
+  font-size: 14px;
+  margin-bottom: 0;
+
+  a {
+    color: $color-error;
+  }
+}
+
+.success-message,
+.success-message p,
+.success-message:last-of-type {
+  color: $color-success;
+  font-size: 14px;
+
+  a {
+    color: $color-success;
+  }
+}
+
+.form-errors {
+  li {
+    margin: 4px 0 8px;
+    color: $color-error;
+    font-size: 14px;
+  }
+}
+
+.form-error-text,
+.form-success-text {
+  border-radius: 6px;
+  margin: 0 0 32px;
+  padding: 12px 16px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.form-error-text,
+.form-error-text p {
+  background: lighten($color-error, 35%);
+  color: $color-error;
+}
+
+.form-success-text,
+.form-success-text p {
+  background: lighten($color-success, 45%);
+  color: $color-success;
+}
+
+ul.ff-errors {
+  margin: 5px 0 0 0;
+
+  li {
+    color: $color-error;
+    font-size: 14px;
+  }
+}

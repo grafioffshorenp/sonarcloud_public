@@ -1,0 +1,167 @@
+/* Background Colors */
+$bg-color: $color-second;
+$bg-color-first: $color-first;
+$bg-color-second: $color-second;
+$bg-color-third: $color-third;
+$bg-color-fourth: $color-fourth;
+$bg-color-fifth: $color-fifth;
+$bg-color-fifth-light: rgba($color-fifth, 0.05);
+$bg-color-light-opaque: $color-first-light;
+$bg-color-light: rgba($color-first-light, 0.5);
+$bg-color-lighter: rgba($color-first-light, 0.35);
+$bg-color-lightest: rgba($color-first-light, 0.15);
+$bg-color-lightest-alt: rgba($color-first-light, 0.05);
+$bg-color-dark: rgba($color-first, 0.15);
+$bg-color-darker: rgba($color-first, 0.5);
+$bg-color-hover: lighten($color-second, 25%);
+$bg-color-disabled: $light-grey;
+$bg-color-success: $color-third;
+$bg-color-error: $color-error;
+$bg-color-neutral: $color-first;
+
+/* Button Colors */
+$button-background-color-first: $color-second;
+$button-background-color-second: $color-third;
+$button-background-color-third: $color-fifth;
+$button-background-color-fourth: $color-third;
+$button-background-color-fifth: $color-first;
+$button-background-color-danger: $color-error;
+$button-background-color-disabled: $bg-color-disabled;
+
+$button-border-color-first: $color-second;
+$button-border-color-second: $color-third;
+$button-border-color-third: $color-fourth;
+$button-border-color-fourth: $color-third;
+$button-border-color-fifth: $color-first;
+$button-border-color-danger: $color-error;
+$button-border-color-disabled: $bg-color-disabled;
+
+$button-text-color-first: $color-second;
+$button-text-color-second: $color-fourth;
+$button-text-color-danger: $color-error;
+$button-text-color-default: $white;
+
+$button-radial-color-first: rgba($color-second-alt, 0.6);
+
+/* Icon colors */
+$icon-background: $color-fifth;
+$icon-color: $color-first;
+$icon-color-second: $color-second;
+$icon-color-third: $color-third;
+$icon-color-alt: $color-fifth;
+$icon-color-alt-light: rgba($color-fifth, 0.15);
+$icon-color-light: $color-first-light;
+$icon-color-lighter: $color-first-alt;
+$icon-color-lightest: rgba($color-first-alt, 0.5);
+$icon-color-check: $color-fifth;
+$icon-color-check-bg: rgba($color-fifth, 0.15);
+$icon-text-shadow: 1px 2px
+  rgba(
+    $color: $color-fifth,
+    $alpha: 0.4
+  );
+
+/* Box shadow colors */
+$box-shadow: 0 2px 36px 0 rgba(0, 0, 0, 0.15);
+$box-shadow-colored: 0 1px 0 0 $color-first-light;
+$box-shadow-colored-light: 0 3px 8px rgba($color-first, 0.2);
+$box-shadow-vacancy: 0 2px 44px 0 rgba(85, 91, 110, 0.15);
+
+/* Border colors */
+$border-color-light: rgba($color-first-light, 0.15);
+$border-color-lighter: rgba($color-first-light, 0.05);
+$border-color-dark: $color-first-light;
+$border-color-darker: rgba($color-first, 0.15);
+$border-color-first: $color-first;
+$border-color-second: $color-second;
+$border-color-third: $color-third;
+$border-color-fourth: $color-fourth;
+$border-color-fifth: $color-fifth;
+
+/* Text colors */
+$anchor-color: $text-color;
+$anchor-color-cta: $color-second;
+$anchor-color-cta-alt: $color-third;
+$paragraph: $color-first-light;
+$paragraph-colored: $color-first;
+$paragraph-disabled: $lightest-grey;
+$paragraph-highlight: $color-second;
+$header-color: $color-fourth;
+$header-color-dark: $color-first;
+$header-color-alt: $color-second;
+$th-color: $color-first;
+
+/* Font weights */
+$header-content-block-font-weight: 600;
+
+/* Input colors */
+$input-color-disabled: $light-grey;
+$input-color-loading: darken($color-first-light, 35%);
+$input-border-color: $color-first-alt;
+$input-border-color-checkbox: $color-fifth;
+$input-border-color-checked: $color-fifth;
+$input-border-color-focus: $color-second;
+$input-border-color-hover: lighten($color-second, 15%);
+$input-border-color-invalid: darken($color-second, 10%);
+$input-border-color-loading: $color-first;
+$input-border-color-disabled: $lightest-grey;
+$input-border-color-disabled-hover: $color-first-alt;
+
+$input-background-color: $color-second-light;
+$input-background-color-disabled: $lightest-grey;
+$input-background-color-checked: $color-fifth;
+
+$input-file-background-color: rgba($color-fifth, 0.05);
+$input-file-border-color: rgba($color-fifth, 0.3);
+$input-file-color: $color-fifth;
+
+$input-switch-background-color: rgba($color-first-light, 0.1);
+$input-switch-border-color: $color-sixth;
+$input-switch-toggler-color: $color-sixth;
+
+/* Label colors */
+$label-color: $grey;
+$label-color-focus: $color-second;
+$label-color-error: $color-error;
+$label-color-saved: $color-first;
+$label-color-required: $color-third;
+
+/* Badge colors */
+$badge-color: $color-second;
+$badge-color-dark: $color-fifth;
+$badge-color-dark-alt: $color-first;
+$badge-color-light: $white;
+$badge-background-light: $color-first-light;
+$badge-background-light-alt: $color-third;
+$badge-background-dark: $color-fifth;
+$badge-background-dark-alt: $color-second;
+
+/* Gradients */
+$gradient-1: linear-gradient(90deg, $gradient-start, $gradient-second 33%, $gradient-third 66%, $gradient-end 100%);
+$gradient-1-bottom-right: radial-gradient(
+  at bottom right,
+  $gradient-end 5%,
+  $gradient-third 30%,
+  $gradient-second 60%,
+  $gradient-start 95%
+);
+$gradient-2: linear-gradient(90deg, $color-first 0%, $color-second 100%);
+$gradient-3: linear-gradient(rgba($color-first, 0), rgba($color-first, 0.5));
+$gradient-4: linear-gradient(14deg, darken($color-third, 5%) 9%, lighten($color-third, 5%) 87%);
+$gradient-5: linear-gradient(
+  $bg-color-lightest-alt,
+  rgba($white, 0.2) 30%,
+  rgba($white, 0.2) 60%,
+  $bg-color-lightest-alt
+);
+$gradient-background: linear-gradient(311deg, lighten($color-fifth, 10%) 17%, $color-fifth 83%);
+$gradient-background-shape: linear-gradient(311deg, $color-fifth 17%, lighten($color-fifth, 10%) 83%);
+
+/* Circles */
+$circle-background: rgba($color-first-alt, 0.3);
+$circle-background-light: rgba($color-first-alt, 0.2);
+$circle-background-dark: rgba($color-first-alt, 0.7);
+$circle-background-alt: rgba($color-first, 0.03);
+
+/* Other */
+$footer-contact-color: $color-second;

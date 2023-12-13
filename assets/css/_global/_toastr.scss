@@ -1,0 +1,169 @@
+.toast-message,
+.toast-text {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.toast-message {
+  box-sizing: border-box;
+  min-height: 60px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 12px 9px 8px 12px;
+  transition: 0.2s ease-in-out;
+  transition-property: margin-top, opacity;
+  width: 100%;
+  z-index: $z-index-toastr;
+
+  @include tablet {
+    padding: 4px 16px 0;
+  }
+
+  @include desktop {
+    padding-top: 0;
+  }
+
+  .icon {
+    border-radius: 12px;
+    display: block;
+    height: 24px;
+    margin-right: 12px;
+    width: 24px;
+
+    @include tablet {
+      margin-right: 16px;
+    }
+
+    &.success,
+    &.error,
+    &.neutral {
+      background-color: $white;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &.success {
+      background-image: url("data:image/svg+xml, #{svg-replace($icon-checkmark, $bg-color-success)}");
+      background-size: 16px;
+    }
+
+    &.error {
+      background-image: url("data:image/svg+xml, #{svg-replace($icon-exclamation, $bg-color-error)}");
+      background-size: 4px;
+    }
+
+    &.neutral {
+      background-image: url("data:image/svg+xml, #{svg-replace($icon-exclamation, $bg-color-neutral)}");
+      background-size: 4px;
+    }
+  }
+
+  &.toast-fixed,
+  &.toast-relative {
+    // margin-top: -60px;
+    opacity: 0;
+
+    &.toast-message--open {
+      margin-top: 0;
+      opacity: 1;
+
+      @include desktop {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &.toast-absolute {
+    transform: translateY(-100%);
+
+    &.toast-message--open {
+      transform: translateY(0%);
+    }
+  }
+
+  &.toast-absolute {
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+
+  &.toast-fixed {
+    left: 0;
+    padding-right: 45px;
+    position: fixed;
+    // top: 0;
+    top: 0;
+    z-index: 1000;
+  }
+
+  &.toast-success {
+    background: $bg-color-success;
+
+    @include until-desktop {
+      background: linear-gradient(0deg, $bg-color-success 60%, rgba($bg-color-success, 0.75));
+    }
+  }
+
+  &.toast-error {
+    background: $bg-color-error;
+
+    @include until-desktop {
+      background: linear-gradient(0deg, $bg-color-error 60%, rgba($bg-color-error, 0.75));
+    }
+  }
+
+  &.toast-neutral {
+    background: $bg-color-neutral;
+
+    @include until-desktop {
+      background: linear-gradient(0deg, $bg-color-neutral 60%, rgba($bg-color-neutral, 0.75));
+    }
+  }
+}
+
+.toast-text,
+.toast-text p {
+  color: $white;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 120%;
+  margin: 0;
+
+  @include until-tablet {
+    flex: 1;
+    width: 100%;
+  }
+
+  a {
+    color: $white !important;
+    display: inline !important;
+    font-weight: 300 !important;
+  }
+
+  strong {
+    color: $white;
+    font-weight: 500;
+
+    @include until-tablet {
+      display: block;
+    }
+
+    @include tablet {
+      margin-right: 8px;
+    }
+  }
+}
+
+.toast__cta {
+  margin-left: 12px;
+
+  @include tablet {
+    margin-left: 16px;
+  }
+}
+
+.toast__cta-button {
+  cursor: pointer;
+  text-decoration: underline;
+}

@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800|Roboto:300,400,500,700&display=swap");
+//@import "../node_modules/normalize.css/normalize.css";
+@import "./abstracts/all";
+@import "./_utils/utils";
+@import "./_global/global.scss";
+@import "./base/all";
+@import "./components/all";
+@import "./layout/all";
+@import "./utils/all";
+@import "./pages/all";
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html.disable-scroll {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+body {
+  background: $white;
+  color: $grey;
+  font-family: $secondary-font;
+  font-size: 16px;
+  font-weight: 400;
+  min-height: 100vh;
+  line-height: 1;
+  position: relative;
+  transition: padding 0.2s ease-in-out;
+
+  &.has-modal {
+    nav {
+      z-index: 8;
+    }
+  }
+
+  &.has-toast-message {
+    padding-top: 60px;
+
+    > nav {
+      top: 60px;
+    }
+  }
+}
+
+body,
+body > #main-page,
+body > #__nuxt {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body > #main-page,
+body > #__nuxt {
+  // background-color: #f5f5f5;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+div,
+section,
+article,
+header {
+  // position: relative;
+}
+
+main {
+  position: relative;
+  margin-bottom: 5rem;
+
+  &.no-margin-until-desktop {
+    margin-bottom: 0;
+
+    @include desktop {
+      margin-bottom: 5rem;
+    }
+  }
+
+  @include tablet {
+    min-height: 100px;
+  }
+}
+
+.main-page--bg-grey {
+  background-color: $lightest-grey-alt;
+}
+
+.main--no-bottom-padding {
+  ~ footer.main-footer {
+    padding-top: 0;
+  }
+}
+
+.highlight {
+  color: $paragraph-highlight;
+}
+
+.c-main-footer {
+  margin-top: auto !important;
+}
+
+//@import "../templates/**/*.scss";

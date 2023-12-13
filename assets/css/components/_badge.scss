@@ -1,0 +1,131 @@
+.badge {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  margin: 0;
+  min-height: 32px;
+  max-width: 120px;
+  padding: 6px 16px;
+
+  color: $badge-color;
+  font-family: $primary-font;
+  font-size: 1rem;
+  font-weight: 700;
+  white-space: nowrap;
+
+  &--mobile-only {
+    display: block;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &--tablet-only {
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &--medium {
+    font-size: 14px;
+    min-height: 24px;
+    padding: 4px 8px;
+  }
+
+  &--small {
+    font-family: $secondary-font;
+    font-size: 12px;
+    font-weight: 500;
+    min-height: 20px;
+    padding: 4px 8px;
+  }
+
+  &--light,
+  &--light-alt,
+  &--dark,
+  &--dark-inverted,
+  &--dark-alt {
+    padding: 0.5rem 1rem;
+
+    border-radius: 6px;
+    line-height: 1;
+  }
+
+  &--light {
+    background: $badge-background-light;
+    color: $badge-color-dark;
+  }
+
+  &--light-alt {
+    background: $badge-background-light-alt;
+    color: $white;
+  }
+
+  &--dark {
+    background: $badge-background-dark;
+    color: $badge-color-light;
+  }
+
+  &--dark-inverted {
+    border: 2px solid $badge-background-dark;
+    background: $badge-color-light;
+    color: $badge-background-dark;
+  }
+
+  &--dark-alt {
+    background: $badge-background-dark-alt;
+    color: $badge-color-light;
+  }
+
+  span {
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 5px;
+  }
+}
+
+.badge-list {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin: -4px -4px 12px;
+}
+
+.badge-list__name,
+.badge-list__item,
+.badge-list__toggle {
+  margin-bottom: 0;
+  padding: 4px;
+}
+
+.badge,
+.badge-list__toggle {
+  &.is-disabled {
+    border-color: $button-border-color-disabled;
+    color: $button-border-color-disabled;
+
+    opacity: 0.3;
+    pointer-events: none;
+    text-decoration: none;
+  }
+}
+
+.badge-list__checkbox {
+  display: none;
+
+  &:checked ~ .badge {
+    @extend .badge--dark;
+  }
+}
+
+.badge-list__name {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+}

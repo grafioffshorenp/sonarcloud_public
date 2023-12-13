@@ -1,0 +1,32 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+$base-url: "/assets/" !default;
+
+// BREAKPOINT VARIABLES
+$mobile: 412px;
+$tablet: 768px;
+$tablet-landscape: 1024px;
+$desktop: 1170px;
+$widescreen: 1440px;
+$desktop-big: 1921px;
+
+$navigation-breakpoint: 1282px;
+$navigation-breakpoint-wide: 1700px;
+
+// GRID VARIABLES
+$gap: 32px;
+$container-tablet: 768px;
+$container-desktop: 992px;
+$container-wide: 1168px;
+$mobile-container-spacing: 22px;
+
+$wrapper-width: 1440px;
+
+// Borders
+$button-radius: 6px;
+$container-radius: 30px;
+
+// set heights
+$navbar-height: 90px;

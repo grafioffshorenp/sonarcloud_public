@@ -1,0 +1,182 @@
+.flatpickr-calendar {
+  &.date-picker {
+    padding: 16px 24px;
+    width: auto;
+
+    .flatpickr-monthDropdown-months,
+    .numInput.cur-year {
+      font-size: 16px;
+      font-weight: 500;
+      color: $dark-grey;
+      text-transform: capitalize;
+    }
+
+    .flatpickr-weekdaycontainer {
+      @include until-tablet {
+        justify-content: center;
+      }
+    }
+
+    .flatpickr-weekday {
+      text-transform: capitalize;
+      font-size: 12px;
+      font-weight: 200;
+      color: $dark-grey;
+      opacity: 0.3;
+
+      @include until-tablet {
+        max-width: 39px;
+      }
+    }
+
+    .dayContainer {
+      @include until-tablet {
+        justify-content: center;
+      }
+    }
+
+    .flatpickr-day {
+      &.selected {
+        background: $anchor-color-cta;
+      }
+
+      &.today,
+      &.selected {
+        border-color: $anchor-color-cta;
+      }
+
+      &:hover {
+        color: $dark-grey;
+        background: $bg-color-lightest;
+
+        &.selected {
+          background: $anchor-color-cta;
+          color: $white;
+        }
+      }
+    }
+
+    .flatpickr-next-month,
+    .flatpickr-prev-month {
+      svg {
+        stroke: $anchor-color-cta;
+        fill: $anchor-color-cta;
+        stroke-width: 2px;
+      }
+    }
+
+    &--flat {
+      box-shadow: none;
+
+      .flatpickr-innerContainer {
+        justify-content: center;
+      }
+
+      @include until-tablet {
+        width: 100%;
+      }
+    }
+
+    &--no-padding {
+      padding: 0;
+    }
+
+    &--bottom-margin {
+      margin-bottom: 24px;
+    }
+
+    &--light-bg {
+      background: $bg-color-lightest-alt;
+
+      @include until-tablet {
+        padding: 4px 0;
+      }
+    }
+  }
+}
+
+.flatpickr {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 24px;
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    font-size: $label__font-size;
+    margin: 0;
+  }
+
+  &__info-icon {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    padding: 6px 9.5px;
+    background: $anchor-color;
+    color: $white;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  &__info-text {
+    font-size: 12px;
+    color: $white;
+    padding: 8px 12px;
+    position: absolute;
+    top: 38px;
+    left: 25%;
+    width: 80%;
+    background: $anchor-color;
+    z-index: 4;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px 0 rgba(77, 0, 81, 0.5);
+    user-select: none;
+
+    @include tablet {
+      left: 50%;
+    }
+  }
+
+  .speechbubble-tail {
+    position: absolute;
+    display: flex;
+    width: 32px;
+    z-index: 3;
+
+    top: 23px;
+    right: -4px;
+
+    &__left,
+    &__right {
+      width: 20px;
+      height: 16px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    &__left:before,
+    &__right:before {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 32px;
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    &__left:before {
+      bottom: 0;
+      right: 0;
+      box-shadow: 8px 10px 0 0 $anchor-color;
+    }
+    &__right:before {
+      bottom: 0;
+      left: 0;
+      box-shadow: -8px 10px 0 0 $anchor-color;
+    }
+  }
+}

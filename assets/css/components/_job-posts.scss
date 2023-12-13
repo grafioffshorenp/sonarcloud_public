@@ -1,0 +1,207 @@
+.search-page {
+  margin-top: 24px;
+
+  @include tablet {
+    margin-top: 48px;
+  }
+
+  .page__sidebar {
+    margin-bottom: 16px;
+
+    @include tablet {
+      margin-bottom: 32px;
+    }
+
+    @include desktop {
+      margin-bottom: 0;
+    }
+
+    .page__content {
+      margin: 0;
+      padding: 20px 25px;
+
+      @include tablet {
+        padding: 25px 32px;
+      }
+
+      @include desktop {
+        > .panel__anchor {
+          pointer-events: none;
+
+          i {
+            display: none;
+          }
+        }
+      }
+    }
+
+    form {
+      label.branch ~ label input[type="checkbox"] {
+        margin-left: 16px;
+      }
+
+      .input-row {
+        .input--datetime {
+          @include tablet {
+            max-width: calc(50% - 8px);
+          }
+        }
+      }
+    }
+
+    .panel {
+      &:not(:last-of-type) {
+        margin-bottom: 20px;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      &__anchor {
+        color: rgba($dark-grey, 0.9);
+        display: flex;
+        font-family: $secondary-font;
+        font-size: 16px;
+        font-weight: 500;
+        justify-content: space-between;
+        margin-top: 0;
+        text-decoration: none;
+
+        &:not(.parent) {
+          padding-bottom: 10px;
+
+          + div {
+            border-top: 1px solid $border-color-light;
+            padding-top: 16px;
+            padding-left: 16px;
+          }
+        }
+
+        &.parent {
+          color: $header-color;
+          font-family: $primary-font;
+          font-weight: 600;
+          font-size: 16px;
+
+          @include tablet {
+            font-size: 24px;
+          }
+
+          &.expanded {
+            margin-bottom: 24px;
+          }
+
+          i {
+            color: $icon-color-alt;
+            margin-right: -5px;
+
+            @include tablet {
+              font-size: 18px;
+            }
+          }
+        }
+
+        i {
+          color: $icon-color-second;
+
+          &.expanded {
+            font-size: 12px;
+            margin-top: -8px;
+          }
+
+          &.collapsed {
+            font-size: 24px;
+            margin-top: 1px;
+          }
+        }
+
+        + form {
+          margin-top: 25px;
+        }
+
+        &.expanded {
+          .fa-plus,
+          .fa-chevron-down {
+            // display: none;
+          }
+        }
+
+        &.collapsed {
+          .fa-window-minimize,
+          .fa-chevron-up {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .results-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+  }
+
+  .image-div {
+    width: 20%;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+  }
+  .image-div--big {
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+  }
+  .name-lastname-div {
+    width: 80%;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+  }
+  .talentsearch-list__header {
+    width: 100%;
+    overflow: hidden;
+  }
+  .circle-image {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  .circle-image--big {
+    width: 160px;
+    height: 160px;
+  }
+  .circle-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .bg-fallback-employee,
+  .bg-fallback-employer {
+    background-color: $bg-color-light;
+    background-size: cover;
+    &--opaque-bg {
+      background-color: $bg-color-light-opaque;
+    }
+    &--darker-bg {
+      background-color: $bg-color-darker;
+    }
+  }
+  .bg-fallback-employee {
+    height: 100px;
+    background-image: url("data:image/svg+xml, #{svg-replace($icon-employee-fallback, $icon-color)}");
+  }
+  .bg-fallback-employee--big {
+    height: 160px;
+    background-image: url("data:image/svg+xml, #{svg-replace($icon-employee-fallback, $icon-color)}");
+  }
+  .header-container {
+    display: flex;
+    align-items: center;
+  }
+}

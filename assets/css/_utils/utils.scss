@@ -1,0 +1,15 @@
+// Only variables, mixins and functions, etc. No code that get's rendered.
+// This file is imported in vue.config.js
+
+@import "breakpoints";
+@import "colors-default";
+@import "colors-elements-default";
+@import "functions";
+@import "typography";
+
+@import "grid";
+@import "mixins";
+@import "icons";
+@import "layouts";
+@import "utility";
+@import "variables";

@@ -1,0 +1,162 @@
+$modal-border-radius: 5px;
+$modal-title-bar-height: 64px;
+$modal-padding: 24px;
+
+.modal {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  &__backdrop {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 0.2s ease-in;
+    width: 0;
+  }
+
+  .modal__backdrop {
+    background-color: rgba(#4d4d4d, 0.8);
+    cursor: default;
+    height: 100vh;
+    left: 0;
+    opacity: 1;
+    overflow-y: scroll;
+    position: fixed;
+    text-decoration: none;
+    top: 0;
+    width: 100vw;
+    z-index: $z-index-modal;
+
+    .modal__close {
+      cursor: pointer;
+      margin: 0;
+      position: absolute;
+      right: 0;
+      text-decoration: none;
+      top: -32px;
+    }
+
+    .modal__close,
+    .modal__close i {
+      color: $white;
+      font-size: 20px;
+    }
+
+    .modal__title-bar {
+      align-items: center;
+      background: $blue-light;
+      border-top-left-radius: $modal-border-radius;
+      border-top-right-radius: $modal-border-radius;
+      display: flex;
+      height: 64px;
+      left: 0;
+      padding: 0 $modal-padding;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    .modal__content {
+      align-items: center;
+      background-color: $white;
+      border-radius: $modal-border-radius;
+      box-shadow: $box-shadow;
+      position: relative;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      font-weight: 400;
+      justify-content: center;
+      margin: 18vh 24px 91px 24px;
+      padding: 24px;
+      text-align: center;
+      width: calc(100% - 48px);
+      z-index: 999;
+
+      @include tablet {
+        max-width: 400px;
+        margin: 16vh auto;
+        padding: 32px;
+      }
+
+      &:not(.compact):not(.fit-content-height) {
+        min-height: 480px;
+
+        @include tablet {
+          min-height: 450px;
+        }
+      }
+
+      &.compact {
+        @include tablet {
+          max-width: 328px;
+        }
+      }
+
+      &.has-title-bar {
+        padding-top: $modal-title-bar-height + $modal-padding;
+      }
+
+      .input-wrapper {
+        margin-top: 8px;
+      }
+    }
+
+    .modal__title {
+      font-size: 24px;
+      margin-bottom: 16px;
+      margin-top: 0;
+      width: 100%;
+    }
+  }
+
+  .icon--text {
+    font-family: $primary-font;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .modal__text,
+  .modal__text p {
+    margin-bottom: 16px;
+  }
+
+  .modal__content {
+    .btn {
+      margin-top: auto;
+
+      + .btn {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .btn:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+.modal {
+  &--wide &__content {
+    @include tablet {
+      max-width: 748px !important;
+      width: 100% !important;
+      align-items: flex-start !important;
+    }
+  }
+
+  &--wide &__stars {
+    @include tablet {
+      width: 50%;
+    }
+  }
+
+  &--wide &__submit {
+    @include tablet {
+      width: 50%;
+    }
+  }
+}

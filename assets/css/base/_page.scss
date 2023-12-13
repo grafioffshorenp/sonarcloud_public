@@ -1,0 +1,9 @@
+.page-wrapper {
+  &--bg-grey {
+    background-color: $white;
+
+    @include tablet {
+      background-color: $lightest-grey-alt;
+    }
+  }
+}

@@ -1,0 +1,142 @@
+$primary-font: "CircularStd", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+$secondary-font: "OpenSans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+
+.t-label {
+  color: $paragraph-colored;
+  font-family: $primary-font;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.t-heading-1 {
+  font-family: $font-title;
+  font-size: 32px !important;
+  line-height: 36px;
+
+  &--centered {
+    text-align: center;
+  }
+
+  &--until-desktop {
+    display: none;
+
+    @include until-desktop {
+      display: block;
+    }
+  }
+
+  &--from-desktop {
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  @include tablet {
+    font-size: 56px !important;
+    line-height: 64px;
+    font-weight: 900;
+  }
+}
+
+.t-heading-2 {
+  font-family: $font-title;
+  font-size: 16px;
+  line-height: 20px;
+
+  @include tablet {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  &--big {
+    // I have to use important because of bad specificy in prior code
+
+    font-size: 24px !important;
+
+    @include tablet {
+      font-size: 56px !important;
+    }
+  }
+
+  &--section-title {
+    font-size: 24px !important;
+  }
+}
+
+.t-heading-3 {
+  margin-bottom: 0px !important;
+  font-size: 24px;
+}
+
+.t-heading-4 {
+  font-size: 14px;
+
+  @include tablet {
+    font-size: 16px;
+  }
+}
+
+.t-percentage {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.t-richtext {
+  &--centered {
+    text-align: center;
+  }
+
+  &--bold {
+    font-weight: 700;
+  }
+
+  *:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+.t-text {
+  margin-bottom: 0px;
+
+  &--small {
+    font-size: 14px;
+  }
+
+  &--color-primary {
+    color: $header-color;
+  }
+
+  &--color-grey {
+    color: $color-greyed-out;
+  }
+
+  &--bold {
+    color: $font-color-dark;
+    font-weight: 500;
+  }
+}
+
+.t-icon {
+  &--star {
+    height: 24px;
+    width: 24px;
+    color: $icon-color-third;
+  }
+
+  &--handshake {
+    height: 24px;
+    width: 24px;
+    color: $icon-color-alt;
+  }
+
+  &--color-primary {
+    color: $icon-color-alt;
+  }
+
+  &--color-grey {
+    color: $color-greyed-out;
+  }
+}

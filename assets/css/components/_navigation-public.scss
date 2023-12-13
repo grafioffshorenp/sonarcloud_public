@@ -1,0 +1,30 @@
+nav:not(.logged-in) {
+  .nav__wrapper {
+    display: none;
+  }
+
+  .nav__wrapper {
+    @include desktop {
+      display: flex;
+      min-height: 48px;
+    }
+  }
+
+  + main,
+  + .toast-message + main {
+    padding-top: 64px;
+
+    @include tablet {
+      padding-top: 104px;
+    }
+  }
+
+  + .main-header--transparent,
+  + .toast-message + .main-header--transparent {
+    padding-top: 86px;
+
+    @include tablet {
+      padding-top: 128px;
+    }
+  }
+}

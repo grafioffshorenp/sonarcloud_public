@@ -1,0 +1,106 @@
+.c-general-header {
+  position: relative;
+  background-color: $bg-color-second;
+
+  &__main {
+    @include container;
+
+    @include desktop {
+      width: 100%;
+      margin: 0;
+      @include grid-full;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    padding-top: 150px;
+    padding-bottom: 100px;
+
+    @include desktop {
+      grid-column: 2 / span 6;
+      padding-bottom: 170px;
+      padding-top: 160px;
+    }
+  }
+
+  &__visual {
+    display: none;
+
+    @include desktop {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      display: block;
+      height: 100%;
+      grid-column: 9 / -1;
+      overflow: hidden;
+    }
+  }
+
+  &__visual picture img {
+    position: absolute;
+    top: -1px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  &__wave-bar {
+    align-items: flex-end;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    transform: translateY(1px);
+
+    @include desktop {
+      @include grid-full($gap-horizontal: 0);
+    }
+  }
+
+  &__wave-filler {
+    display: none;
+
+    @include desktop {
+      display: block;
+      height: 100%;
+      background-color: white;
+
+      &--right {
+        grid-column-end: -1;
+      }
+    }
+
+    &--left {
+      height: calc(100% - 8px);
+
+      @include desktop-wide {
+        height: calc(100% - 10px);
+      }
+    }
+  }
+
+  &__wave-mobile {
+    width: 100%;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__wave-desktop {
+    width: 100%;
+    display: none;
+
+    @include desktop {
+      display: block;
+      grid-column: 2 / -2;
+    }
+  }
+}

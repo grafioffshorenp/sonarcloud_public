@@ -1,0 +1,76 @@
+.popover {
+  cursor: pointer;
+
+  &:hover {
+    i:after,
+    .popover__text {
+      opacity: 1;
+      transition-delay: 0.5s;
+      visibility: visible;
+    }
+  }
+
+  i:after,
+  &__text {
+    opacity: 0;
+    transition: opacity 0.1s linear;
+    visibility: hidden;
+  }
+
+  i {
+    font-size: 24px;
+    color: $icon-color-alt;
+    position: relative;
+
+    &:after {
+      background-image: url("data:image/svg+xml, #{svg-replace($icon-popover, $icon-color-alt)}");
+      background-size: 24px 12px;
+      position: absolute;
+      content: "";
+      height: 12px;
+      left: -4px;
+      top: 18px;
+      width: 24px;
+      z-index: 1;
+    }
+  }
+
+  &__text {
+    background: $bg-color-fifth;
+    border-radius: 6px;
+    box-shadow: $box-shadow;
+    color: $white;
+    font-family: $secondary-font;
+    font-size: 14px;
+    font-weight: 400;
+    left: 0;
+    line-height: 114%;
+    padding: 8px 12px;
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    z-index: 1;
+
+    &--documents {
+      left: auto;
+      left: -20px;
+      width: 240px;
+
+      @include tablet {
+        left: -40px;
+        width: 280px;
+      }
+    }
+
+    &--locations {
+      left: auto;
+      right: -30px;
+      width: 240px;
+
+      @include tablet {
+        right: -50px;
+        width: 280px;
+      }
+    }
+  }
+}

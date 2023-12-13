@@ -1,0 +1,363 @@
+button {
+  -webkit-appearance: initial;
+  display: inline-block;
+
+  box-sizing: border-box;
+  cursor: pointer;
+
+  border: none;
+  background: transparent;
+}
+
+.btn,
+.button,
+a.btn,
+[type="submit"] {
+  -webkit-appearance: initial;
+  align-items: center;
+  border-radius: 5px;
+  border-style: none;
+  border-width: 2px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  font-family: $primary-font;
+  font-size: 18px;
+  font-weight: 600;
+  height: 64px;
+  justify-content: center;
+  line-height: 1.78;
+  outline: none;
+  overflow: hidden;
+  padding: 0 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all ease 0.1s;
+  width: 100%;
+  z-index: 0;
+
+  &:hover {
+    filter: brightness(92%);
+  }
+
+  /* Text colors */
+  &.color-default,
+  &:not([class*="color-"]) {
+    color: $button-text-color-default;
+  }
+
+  &.color-first {
+    color: $button-text-color-first;
+  }
+
+  &.color-second {
+    color: $button-text-color-second;
+  }
+
+  &.color-white {
+    color: $white;
+  }
+
+  &.color-danger {
+    color: $button-text-color-danger;
+  }
+
+  /* Background colors */
+  &.background-first,
+  &.background-default,
+  &:not([class*="background-"]) {
+    background-color: $orange;
+
+    @include on-event {
+      background-color: darken($orange, 7%);
+    }
+  }
+
+  &.disabled,
+  &.background-transparent,
+  &.background-second,
+  &.background-third,
+  &.background-fourth,
+  &.background-fifth,
+  &[disabled="disabled"] {
+    &::before {
+      display: none;
+    }
+  }
+
+  &.background-second {
+    background-color: $button-background-color-second;
+
+    &:active,
+    &:focus {
+      box-shadow: 0 0 0 3px lighten($button-border-color-second, 15%);
+    }
+
+    &.border-default,
+    &:not([class*="border-"]) {
+      border-color: $button-border-color-second;
+
+      &:active,
+      &:focus {
+        box-shadow: 0 0 0 3px lighten($button-background-color-second, 15%);
+      }
+    }
+  }
+
+  &.background-third {
+    background-color: $button-background-color-third;
+
+    &:active,
+    &:focus {
+      box-shadow: 0 0 0 3px lighten($button-border-color-third, 15%);
+    }
+
+    &.border-default,
+    &:not([class*="border-"]) {
+      border-color: $button-border-color-third;
+
+      &:active,
+      &:focus {
+        box-shadow: 0 0 0 3px lighten($button-background-color-third, 15%);
+      }
+    }
+  }
+
+  &.background-fourth {
+    background-color: $button-background-color-fourth;
+
+    &:active,
+    &:focus {
+      box-shadow: 0 0 0 3px lighten($button-border-color-fourth, 15%);
+    }
+
+    &.border-default,
+    &:not([class*="border-"]) {
+      border-color: $button-border-color-fourth;
+
+      &:active,
+      &:focus {
+        box-shadow: 0 0 0 3px lighten($button-background-color-fourth, 15%);
+      }
+    }
+  }
+
+  &.background-fifth {
+    background-color: $button-background-color-fifth;
+
+    &:active,
+    &:focus {
+      box-shadow: 0 0 0 3px lighten($button-border-color-fifth, 15%);
+    }
+
+    &.border-default,
+    &:not([class*="border-"]) {
+      border-color: $button-border-color-fifth;
+
+      &:active,
+      &:focus {
+        box-shadow: 0 0 0 3px lighten($button-background-color-fifth, 15%);
+      }
+    }
+  }
+
+  &.background-danger {
+    background-color: $button-background-color-danger;
+    color: $white;
+
+    &:active,
+    &:focus {
+      box-shadow: 0 0 0 3px lighten($button-border-color-danger, 15%);
+    }
+
+    &.border-default,
+    &:not([class*="border-"]) {
+      border-color: $button-border-color-danger;
+
+      &:active,
+      &:focus {
+        box-shadow: 0 0 0 3px lighten($button-background-color-danger, 15%);
+      }
+    }
+  }
+
+  &.background-transparent {
+    background-color: transparent;
+    border-style: solid;
+
+    &:active,
+    &:focus {
+      box-shadow: 0 0 0 3px #e0e0e0;
+    }
+
+    &:hover {
+      background: lighten(#e0e0e0, 5%);
+    }
+  }
+
+  /* Border-colors */
+  &.border-default,
+  &.border-first,
+  &:not([class*="border-"]) {
+    border-color: $button-border-color-first;
+  }
+
+  &.border-second {
+    border-color: $button-border-color-second;
+  }
+
+  &.border-third {
+    border-color: $button-border-color-third;
+  }
+
+  &.border-fourth {
+    border-color: $button-border-color-fourth;
+  }
+
+  &.border-danger {
+    border-color: $button-border-color-danger;
+  }
+
+  &.disabled,
+  &:disabled {
+    background: $button-background-color-disabled !important;
+    border-color: $button-border-color-disabled !important;
+    color: $white;
+    pointer-events: none;
+
+    &:hover {
+      cursor: default;
+    }
+
+    &:active,
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+
+  &.btn--pill {
+    border-radius: 32px;
+  }
+
+  &.btn--flatten {
+    height: 56px;
+
+    &.btn--pill {
+      border-radius: 24px;
+    }
+  }
+
+  &.btn--flatten-tablet {
+    @include tablet {
+      height: 56px;
+    }
+  }
+
+  &.btn--rounded {
+    border-radius: 50%;
+  }
+
+  &.btn--with-icon {
+    position: relative;
+
+    i {
+      margin-left: 16px;
+      margin-top: auto;
+      margin-bottom: auto;
+
+      @include tablet {
+        margin: 0;
+        position: absolute;
+        right: 16px;
+        top: calc(50% - 9px);
+      }
+    }
+  }
+
+  &.btn--no-text-tablet {
+    max-height: 100%;
+    margin-left: 18px;
+
+    @include until-desktop {
+      width: auto;
+      padding: 0 32px;
+      white-space: nowrap;
+    }
+
+    @include until-tablet {
+      i {
+        font-size: 24px;
+        margin: 0;
+      }
+    }
+  }
+
+  &.btn--small {
+    height: 32px;
+    padding: 0 8px;
+    font-size: 14px;
+
+    @include desktop {
+      height: 40px;
+    }
+
+    &.btn--pill {
+      border-radius: 20px;
+    }
+  }
+
+  &:not(.background-transparent) .fa-spinner {
+    color: $white;
+  }
+}
+
+.text-link {
+  text-decoration: underline;
+  line-height: 130%;
+
+  &:visited,
+  &:link {
+    color: $color-first;
+    font-weight: 400;
+  }
+
+  &--white {
+    &:visited,
+    &:link {
+      color: $white;
+    }
+  }
+
+  &--normal {
+    &:visited,
+    &:link {
+      font-weight: 400;
+    }
+  }
+}
+
+.inline-buttons {
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .btn {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    @include tablet {
+      margin: 0 16px;
+      max-width: 50%;
+
+      &:not(:last-child) {
+        margin: 0px 16px 16px;
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.c-cta {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+
+  text-align: center;
+
+  &--spaced {
+    margin-bottom: 88px;
+
+    @include tablet {
+      margin-bottom: 128px;
+    }
+  }
+
+  @include tablet {
+    padding: unset;
+    margin-top: 20px;
+  }
+}
+
+.c-cta__title {
+  margin-bottom: 16px;
+
+  .t-title-2 {
+    font-family: $font-sub-title;
+  }
+
+  @include tablet {
+    margin: 0 auto;
+    margin-bottom: 24px;
+    max-width: 720px;
+  }
+}
+
+.c-cta__text {
+  margin-bottom: 24px;
+
+  .t-text {
+    color: $grey;
+  }
+
+  @include tablet {
+    margin: 0 auto;
+    margin-bottom: 40px;
+    max-width: 590px;
+
+    .t-text {
+      color: $teal-dark;
+    }
+  }
+}
+
+.c-cta__button {
+  width: 100%;
+  margin: 0 auto;
+
+  @include tablet {
+    width: max-content;
+  }
+}

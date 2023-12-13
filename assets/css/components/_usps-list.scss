@@ -1,0 +1,81 @@
+.c-usps-list {
+  grid-column: 2/ -2;
+  margin-top: 80px;
+  margin-bottom: 32px;
+
+  @include tablet {
+    margin-top: 100px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 22px;
+    text-align: center;
+
+    @include desktop {
+      text-align: unset;
+      margin-bottom: 98px;
+      flex-direction: row;
+
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 177px;
+    height: 177px;
+
+    margin: 0 auto;
+
+    background-color: $background-light;
+    border-radius: 100%;
+
+    @include desktop {
+      margin: unset;
+
+      width: 340px;
+      height: 340px;
+
+      > img,
+      > picture,
+      > svg {
+        transform: scale(1.5);
+      }
+    }
+
+    @include desktop-wide {
+      width: 432px;
+      height: 432px;
+
+      flex: 0 0 calc(50% - #{36px + calc($gap/2)});
+
+      > img,
+      > picture,
+      > svg {
+        transform: scale(2.4);
+      }
+    }
+  }
+
+  &__content {
+    margin: 42px 0;
+    @include desktop {
+      flex: 0 0 calc(50% - $gap/2);
+    }
+  }
+
+  &__title {
+    margin-bottom: 16px;
+
+    font-family: $font-title;
+  }
+}

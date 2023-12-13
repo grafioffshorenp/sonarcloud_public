@@ -1,0 +1,109 @@
+.c-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 6.25rem 0;
+
+  @include desktop {
+    padding-bottom: 3rem;
+    margin: 5rem 0;
+  }
+
+  &__slides {
+    display: flex;
+    list-style: none;
+    width: 100%;
+  }
+
+  &__slide {
+    flex: 1;
+
+    img {
+      height: 530px;
+    }
+  }
+
+  // --- Navigation ---
+
+  &__nav {
+    position: absolute;
+    top: 55%;
+    width: 100%;
+    height: 0;
+
+    @include tablet {
+      top: 45%;
+    }
+  }
+
+  &__control-btn {
+    width: 46px;
+    height: 46px;
+    border: none;
+    background: $teal-dark;
+    border-radius: 999vh;
+    cursor: pointer;
+    color: $white;
+    font-size: 20px;
+    position: relative;
+    z-index: 1;
+
+    &:first-child {
+      position: absolute;
+      left: 2rem;
+    }
+
+    &:last-child {
+      position: absolute;
+      right: 2rem;
+    }
+
+    // font-awesome styling
+    i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @include desktop {
+      &:first-child {
+        position: absolute;
+        left: 1.5rem;
+      }
+
+      &:last-child {
+        position: absolute;
+        right: 1.5rem;
+      }
+    }
+  }
+
+  &__bullets {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    width: 100%;
+    padding: 0 16px;
+
+    @include desktop {
+      margin-top: 2.5rem;
+    }
+  }
+
+  &__bullet {
+    border: none;
+    margin: 4px;
+    width: 10px;
+    height: 10px;
+    margin-top: -5px;
+    border-radius: 999vh;
+    background-color: $background-light;
+    transition: background-color 0.2s;
+
+    &.glide__bullet--active {
+      background-color: $teal-dark;
+    }
+  }
+}

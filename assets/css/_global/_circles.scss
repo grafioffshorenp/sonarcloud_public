@@ -1,0 +1,37 @@
+.circle {
+  display: none;
+  position: absolute;
+  transform: scaleX(-1);
+  z-index: 0;
+
+  @include tablet {
+    animation: float 5s ease-in-out infinite;
+    display: block;
+  }
+
+  &.circle-1 {
+    background: $circle-background;
+    right: 70%;
+    top: -32px;
+
+    @include youbahn-shape-mirrored(700px);
+  }
+
+  &.circle-2 {
+    animation-delay: 2s;
+    background: $circle-background-light;
+    top: 20%;
+    right: 30%;
+
+    @include youbahn-shape(300px);
+  }
+
+  &.circle-3 {
+    animation-delay: 1s;
+    background: $circle-background-dark;
+    right: -20%;
+    top: 150px;
+
+    @include youbahn-shape(500px);
+  }
+}

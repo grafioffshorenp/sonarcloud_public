@@ -1,0 +1,16 @@
+.c-pill {
+  padding: 0.5rem 1rem;
+
+  background-color: #BBB;
+  border-radius: 5px;
+
+  color: #FFF !important;
+
+  &--selected {
+    background-color: #2395d3;
+  }
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,40 @@
+.l-app {
+  @include wrapper;
+
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+
+  position: relative;
+}
+
+.l-grid {
+  @include grid;
+
+  &--with-container-width {
+    @include container;
+  }
+
+  &--footer-spacing {
+    margin-bottom: 100px;
+    @include tablet {
+      margin-bottom: 120px;
+    }
+  }
+}
+
+.l-full-grid {
+  @include grid-full;
+
+  &--relative {
+    position: relative;
+  }
+}
+
+.l-container {
+  @include container;
+}

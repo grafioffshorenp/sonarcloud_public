@@ -1,0 +1,353 @@
+.nav-mobile-button {
+  color: $teal-dark;
+  font-size: 24px;
+}
+
+.nav-account {
+  align-items: center;
+  display: flex;
+  left: 0;
+  padding: 14px 24px;
+  position: absolute;
+  top: 0;
+  transition: top 0.2s ease-in-out;
+  width: 100%;
+  z-index: 10;
+
+  @include tablet {
+    min-height: 79px;
+    padding: 32px;
+  }
+
+  &:not(.logged-in),
+  &.with-toggle {
+    .nav-mobile-button--open {
+      margin-left: auto;
+
+      @include desktop {
+        display: none;
+      }
+    }
+
+    .nav-mobile-button--closed {
+      position: absolute;
+      right: 24px;
+      top: 24px;
+
+      @include tablet {
+        right: 35px;
+        top: 41px;
+      }
+    }
+
+    .nav__inner.toggled {
+      @include until-desktop {
+        align-items: flex-start;
+        background: $white;
+        flex-direction: column;
+        height: 100%;
+        left: 0;
+        overflow-y: scroll;
+        padding: 45px 24px 40px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+
+        i,
+        a:not(.btn) {
+          color: $teal-dark;
+        }
+
+        .nav-mobile-button--closed,
+        .nav__wrapper {
+          align-items: flex-start;
+          display: flex;
+          flex: 1;
+          flex-direction: column;
+        }
+
+        .nav__wrapper {
+          @include desktop {
+            display: flex;
+            min-height: 48px;
+            width: 100%;
+          }
+        }
+
+        .logo img {
+          margin-top: -0.55rem;
+          margin-bottom: 4rem;
+        }
+
+        ul,
+        ul:last-of-type {
+          margin-bottom: 24px;
+          margin-left: 0;
+        }
+
+        li {
+          a {
+            align-items: center;
+            display: flex;
+            font-family: $primary-font;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 16px 0;
+
+            &:before {
+              content: url("data:image/svg+xml, #{svg-replace($icon-chevron-right, $teal-dark)}");
+              margin-left: 6px;
+              margin-right: 14px;
+              margin-top: 2px;
+            }
+          }
+        }
+
+        .btn {
+          margin-top: auto;
+        }
+      }
+    }
+  }
+
+  .nav__inner,
+  .nav__wrapper,
+  .nav__wrapper > ul {
+    align-items: center;
+    display: flex;
+
+    margin-top: 0.5rem;
+
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+
+  .nav__inner {
+    margin: 0 auto;
+    width: 100%;
+
+    @include tablet {
+      max-width: $inner-row--large - 24px;
+    }
+  }
+
+  .nav__inner-header {
+    @include until-desktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .hamburger {
+      color: $color-fifth;
+      font-size: 24px;
+
+      @include desktop {
+        display: none;
+      }
+    }
+  }
+
+  .nav__wrapper {
+    @include desktop {
+      display: flex;
+      width: 100%;
+    }
+  }
+
+  .logo img {
+    margin-top: 0.5rem;
+
+    @include desktop {
+      margin-right: 3rem;
+    }
+  }
+
+  ul {
+    @include until-desktop {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    &:last-of-type:not(:first-of-type) {
+      margin-left: auto;
+
+      @include desktop {
+        padding-left: 32px;
+      }
+
+      @include desktop-wide {
+        padding-left: 48px;
+      }
+    }
+
+    li:not(:last-of-type) {
+      @include desktop {
+        margin-right: 32px;
+      }
+
+      @include desktop-wide {
+        margin-right: 48px;
+      }
+    }
+
+    li.active a:not(.btn),
+    li a.active:not(.btn) {
+      font-family: $font-title;
+      font-weight: 500;
+      color: $color-fifth !important;
+    }
+
+    li.active a.consol-logout {
+      color: $color-first !important;
+    }
+  }
+
+  a:not(.btn):not(.locations-dropdown__toggle):not(.locations-dropdown__option) {
+    text-decoration: none;
+  }
+
+  .consol-logout {
+    > i {
+      margin-left: 12px;
+    }
+  }
+}
+
+.account-dropdown,
+.locations-dropdown {
+  position: relative;
+  user-select: none;
+
+  &__menu {
+    position: absolute;
+    top: 52px;
+    right: 0;
+    min-width: 124px;
+    max-width: fit-content;
+    padding: 6px 16px;
+    background: $white;
+    box-shadow: $box-shadow;
+    border-radius: 8px;
+    z-index: 10;
+
+    &:after {
+      background-image: url("data:image/svg+xml, #{svg-replace($icon-popover, $white)}");
+      background-size: 24px 12px;
+      position: absolute;
+      content: "";
+      height: 12px;
+      right: 30px;
+      top: -12px;
+      width: 24px;
+      z-index: 10;
+    }
+  }
+
+  &__option {
+    white-space: nowrap;
+  }
+}
+
+.account-dropdown {
+  &__menu {
+    &:after {
+      right: 8px;
+    }
+  }
+
+  &__toggle {
+    cursor: pointer;
+
+    i {
+      font-size: 24px;
+      color: $teal-dark;
+    }
+  }
+}
+
+.locations-dropdown {
+  &__toggle,
+  &__option {
+    text-decoration: none;
+  }
+
+  &__toggle {
+    font-family: $font-title;
+    font-weight: 500;
+    color: $teal-dark;
+    text-align: end;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    i {
+      margin-left: 12px;
+    }
+  }
+
+  &__menu {
+    padding: 12px 16px;
+    flex-grow: 2;
+
+    &:after {
+      right: 30px;
+    }
+  }
+
+  &__title {
+    border-bottom: 1px solid $lightest-grey;
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+    color: $teal-dark;
+  }
+
+  &__option {
+    position: relative;
+    min-height: 28px;
+    color: $paragraph;
+    font-weight: 400;
+    margin: 4px 12px;
+
+    &:before {
+      flex-shrink: 0;
+      background: $white;
+      border: 2px solid $input-border-color-checkbox;
+      border-radius: 50%;
+      box-sizing: border-box;
+      content: "";
+      display: inline-block;
+      height: 18px;
+      margin-left: -2px;
+      margin-right: 8px;
+      transition: border ease 0.1s, background-color ease 0.1s;
+      vertical-align: text-top;
+      width: 18px;
+    }
+
+    &--select-all {
+      color: $color-fifth;
+    }
+
+    &--active {
+      &:before {
+        background: $color-fifth;
+      }
+
+      &:after {
+        background-image: url("data:image/svg+xml, #{svg-replace($icon-checkmark, $white)}");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 10px;
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 14px;
+      }
+    }
+  }
+}

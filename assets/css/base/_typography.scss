@@ -1,0 +1,187 @@
+.t-text {
+  font-size: 16px;
+  font-family: $font-body;
+  font-weight: 400px;
+  line-height: 160%;
+  color: $text-color;
+
+  &--small {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+  }
+
+  &--bold {
+    font-family: $font-body-bold;
+  }
+
+  &--bolder {
+    font-weight: 600;
+  }
+
+  &--teal {
+    color: $teal-dark !important;
+  }
+
+  &--grey {
+    color: $grey !important;
+  }
+
+  &--white {
+    color: $white;
+  }
+}
+
+.t-subtitle {
+  font-size: 18px;
+  font-family: $font-sub-title;
+  font-weight: 500px;
+  line-height: 32px;
+  color: $text-color;
+
+  &--teal {
+    color: $teal-dark;
+  }
+}
+
+.t-link {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: $font-body;
+  text-decoration: none;
+
+  transition: color 0.2s;
+
+  @include on-event {
+    color: $blue;
+  }
+
+  &--white {
+    color: $white;
+
+    @include on-event {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+}
+
+@mixin heading-parameters() {
+  &--white {
+    color: $white;
+  }
+
+  &--teal {
+    color: $teal-dark;
+  }
+
+  &--sub-title {
+    font-family: $font-sub-title;
+    font-weight: 400;
+  }
+
+  &--higlight {
+    strong {
+      color: $blue;
+    }
+  }
+
+  &--thin {
+    font-family: $font-body;
+    font-weight: 400;
+    color: $grey;
+  }
+}
+
+.t-title-small {
+  @include heading-parameters;
+
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.t-title-1 {
+  @include heading-parameters;
+
+  font-size: 40px;
+  line-height: 44px;
+  font-family: $font-title;
+
+  @include tablet {
+    font-size: 60px;
+    line-height: 60px;
+  }
+}
+
+.t-title-2 {
+  @include heading-parameters;
+
+  font-size: 24px;
+  line-height: 28px;
+  font-family: $font-title;
+
+  @include tablet {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  &--section-title {
+    font-size: 20px;
+    line-height: 24px;
+    color: $text-color;
+
+    @include tablet {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  &--large {
+    font-size: 32px;
+    line-height: 36px;
+    font-family: $font-title;
+
+    @include tablet {
+      font-size: 54px;
+      line-height: 60px;
+    }
+  }
+}
+
+.t-title-3 {
+  @include heading-parameters;
+
+  font-size: 20px;
+  line-height: 24px;
+  font-family: $font-title;
+
+  @include tablet {
+    font-size: 24px;
+    line-height: 26px;
+  }
+}
+
+.t-title-4 {
+  @include heading-parameters;
+
+  font-size: 16px;
+  line-height: 20px;
+  font-family: $font-title;
+
+  @include tablet {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.t-form-title {
+  font-family: $font-title;
+  font-size: 20px;
+  line-height: 24px;
+  color: $text-color;
+
+  @include tablet {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}

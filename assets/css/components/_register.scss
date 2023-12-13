@@ -1,0 +1,94 @@
+.c-register {
+  padding: 1.5rem;
+
+  .input--text {
+    > input {
+      margin-bottom: 0.5rem;
+
+      @include tablet {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  .input--password {
+    margin-bottom: 0.5rem;
+
+    .input-guide {
+      margin-top: 0.5rem;
+
+      font-size: 14px;
+      color: $grey;
+    }
+
+    @include tablet {
+      margin-bottom: 0.8rem;
+    }
+  }
+
+  .input--checkbox {
+    margin: 1.2rem 0;
+
+    > label {
+      display: inline-block;
+
+      > a {
+        color: $teal-dark;
+      }
+    }
+
+    > input[type="checkbox"] {
+      margin-right: 0.5rem;
+    }
+  }
+
+  button[type="submit"] {
+    @extend .c-btn;
+    @extend .c-btn--full-width;
+
+    display: block;
+
+    margin-top: 0.5rem;
+
+    @include tablet {
+      margin-top: 20px;
+    }
+  }
+}
+
+.c-register__content {
+  padding: 1.5rem;
+  margin: 0 auto;
+  max-width: 768px;
+
+  background-color: $background-light;
+  border-radius: 6px;
+
+  @include tablet {
+    padding: 32px 80px;
+  }
+}
+
+.c-register__title {
+  margin-bottom: 1rem;
+
+  @include tablet {
+    margin-bottom: 2rem;
+  }
+}
+
+.c-register__success-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  > p {
+    margin-bottom: 1rem;
+  }
+
+  .c-btn {
+    margin-top: 1rem;
+  }
+}

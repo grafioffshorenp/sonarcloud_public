@@ -1,0 +1,453 @@
+$spacing-mobile: 160px;
+$spacing-tablet: 156px;
+$spacing-large-mobile: 224px;
+$spacing-large-tablet: 276px;
+$spacing-top-small-mobile: 24px;
+$spacing-top-small-tablet: 36px;
+
+.main-header,
+.main-header__background,
+.main-header__overlay,
+.main-header__gradient,
+.main-header__video {
+  border-bottom-right-radius: 371px;
+}
+
+.main-header.is-rectangular {
+  &,
+  .main-header__background,
+  .main-header__overlay,
+  .main-header__gradient,
+  .main-header__video {
+    border-bottom-right-radius: 0;
+  }
+}
+
+.is-form-tab {
+  @include until-desktop {
+    background: $lightest-grey-alt;
+  }
+}
+
+.is-tabbed .main-header .subtitle {
+  @include until-desktop {
+    color: transparent;
+  }
+}
+
+.is-tabbed.is-form-tab {
+  .page-my-applications .page__wrapper.active {
+    @include until-desktop {
+      padding: 1rem;
+
+      background: $white;
+      border-radius: 6px;
+
+      .panel__anchor {
+        padding-left: 0;
+
+        &.expanded {
+          border-bottom-left-radius: 40px;
+        }
+      }
+    }
+  }
+}
+
+.main-header {
+  background: $bg-color-second;
+  height: 100%;
+  padding-top: 100px;
+  width: 100%;
+  z-index: 1;
+
+  @include until-tablet {
+    margin-bottom: 24px;
+  }
+
+  @include tablet {
+    background: none;
+    display: flex;
+    padding-bottom: 40px;
+    padding-top: 156px;
+  }
+
+  &--overlapping {
+    padding-bottom: $spacing-mobile;
+
+    ~ main {
+      margin-top: -$spacing-mobile + 24px;
+    }
+  }
+
+  &--overlapping,
+  &--overlapping--tablet {
+    @include tablet {
+      padding-bottom: $spacing-tablet;
+    }
+
+    + main {
+      @include tablet {
+        margin-top: -$spacing-tablet + 40;
+      }
+
+      > * {
+        z-index: 1;
+      }
+    }
+  }
+
+  &--overlapping--large {
+    padding-bottom: $spacing-large-mobile;
+
+    @include tablet {
+      padding-bottom: $spacing-large-tablet;
+    }
+
+    + main {
+      margin-top: -$spacing-large-mobile;
+
+      @include tablet {
+        margin-top: -$spacing-large-tablet;
+      }
+    }
+
+    &--desktop-only {
+      padding-bottom: 24px;
+
+      @include tablet {
+        padding-bottom: $spacing-large-tablet;
+      }
+
+      + main {
+        @include tablet {
+          margin-top: -$spacing-large-tablet;
+        }
+      }
+    }
+  }
+
+  &--transparent {
+    background: none;
+  }
+
+  &--small-padding {
+    padding-top: 48px;
+
+    @include tablet {
+      padding-top: 80px;
+    }
+  }
+
+  &.main-header--media {
+    overflow: hidden;
+    margin-bottom: 24px;
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+
+    h1,
+    h2 {
+      color: $white;
+    }
+
+    h1 {
+      @include tablet {
+        max-width: 60%;
+      }
+    }
+  }
+
+  &__background,
+  &__overlay,
+  &__gradient,
+  &__video {
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    &--transparent {
+      display: none;
+    }
+  }
+
+  &__background,
+  &__overlay,
+  &__video {
+    @include tablet {
+      background: $gradient-1;
+    }
+
+    &:not(.has-image) {
+      -webkit-mask-image: -webkit-radial-gradient(white, black);
+      background: $gradient-2;
+    }
+
+    &.has-image {
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  &__video {
+    object-fit: cover;
+  }
+
+  &__overlay {
+    opacity: 0.7;
+  }
+
+  &__gradient {
+    &--bottom {
+      background: linear-gradient(rgba($color-first, 0) 25%, rgba($color-first, 0.6) 100%);
+
+      @include tablet {
+        background: linear-gradient(rgba($color-first, 0) 35%, rgba($color-first, 0.6) 100%);
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      flex-direction: row;
+    }
+
+    .main-header__intro {
+      display: flex;
+      flex-direction: column;
+
+      a {
+        color: $white;
+        display: block;
+        margin-right: auto;
+        margin-top: 32px;
+      }
+    }
+
+    .main-header__contact-block {
+      justify-self: flex-end;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 64px;
+
+      @include desktop {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 0 auto;
+
+    @include tablet {
+      flex: none;
+    }
+
+    &--no-padding {
+      padding-bottom: 0;
+    }
+  }
+
+  h1 {
+    color: $color-fourth;
+    line-height: 105%;
+  }
+
+  h2 {
+    color: $color-fourth;
+    line-height: 133%;
+    // font-size: 24px;
+  }
+
+  h1,
+  h2 {
+    &.main-header__titles--white {
+      color: $white;
+    }
+  }
+
+  p,
+  label {
+    font-weight: 300;
+    margin-top: 12px;
+
+    @include tablet {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    @include desktop {
+      font-size: 24px;
+      font-weight: 500;
+    }
+  }
+
+  .subtitle > a {
+    margin-top: 24px;
+
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+
+  &__meta {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @include until-tablet {
+      margin-top: 8px;
+      order: 1;
+    }
+
+    @include tablet {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__titles {
+    max-width: 100%;
+
+    @include until-tablet {
+      max-width: 90%;
+    }
+
+    &.main-header__titles--columns {
+      @include until-tablet {
+        > div:first-of-type:not(:last-of-type) {
+          margin-bottom: 24px;
+        }
+      }
+
+      @include tablet {
+        align-items: flex-end;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .column {
+        @include tablet {
+          max-width: calc(100% - 300px);
+        }
+      }
+    }
+
+    &--smaller {
+      margin-bottom: 12px;
+
+      h1 {
+        font-size: 24px;
+
+        @include tablet {
+          font-size: 38px;
+        }
+      }
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__read-more {
+    align-items: center;
+    bottom: 12px;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    position: absolute;
+    text-decoration: none;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    width: 100%;
+
+    @include tablet {
+      bottom: 23px;
+      font-weight: 300;
+    }
+
+    i {
+      margin-top: 4px;
+    }
+  }
+
+  &--large-padding {
+    padding-bottom: 48px;
+  }
+
+  &__content {
+    position: relative;
+    margin-top: 20px;
+  }
+
+  &__user-thumbnail {
+    display: none;
+    position: absolute;
+    inset: auto 0 0 auto;
+
+    @include desktop {
+      display: block;
+    }
+  }
+}
+
+.main-header__article {
+  .category,
+  .subtitle,
+  .subtitle a {
+    color: $color-fifth;
+    font-size: 16px;
+  }
+}
+
+.main-header--article:after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.main-header.zzp {
+  @include until-tablet {
+    padding-top: 80px;
+  }
+}
+
+.main-header.main-header--overlapping + main a.show-sidebar {
+  top: -32px;
+
+  @include tablet {
+    top: -36px;
+  }
+}
+
+.main-header:not(.main-header--overlapping) + main a.show-sidebar {
+  top: -3.5rem;
+
+  @include tablet {
+    top: -2rem;
+  }
+}

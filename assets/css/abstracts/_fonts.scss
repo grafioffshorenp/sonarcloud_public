@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "CircularStd";
+  src: local("CircularStd"), url("/assets/fonts/Circular/CircularStd-Book.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CircularStd-Bold";
+  src: local("CircularStd-Bold"), url("/assets/fonts/Circular/CircularStd-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: local("OpenSans"), url("/assets/fonts/OpenSans/OpenSans-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans-Medium";
+  src: local("OpenSans-Medium"), url("/assets/fonts/OpenSans/OpenSans-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans-Bold";
+  src: local("OpenSans-Bold"), url("/assets/fonts/OpenSans/OpenSans-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+// typography related variables
+$font-title: "CircularStd-Bold", sans-serif;
+$font-sub-title: "CircularStd", sans-serif;
+$font-body: "OpenSans", sans-serif;
+$font-body-medium: "OpenSans-Medium", sans-serif;
+$font-body-bold: "OpenSans-Bold", sans-serif;

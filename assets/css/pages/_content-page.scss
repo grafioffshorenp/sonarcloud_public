@@ -1,0 +1,18 @@
+.c-content-page {
+  width: 100%;
+  max-width: 768px;
+  margin: 80px auto;
+  padding: 0px 1.5rem;
+
+  @include tablet {
+    padding: 0px;
+  }
+}
+
+.c-content-page__title {
+  margin-bottom: 1rem;
+}
+
+.c-content-page__subtitle {
+  margin: 1rem 0;
+}

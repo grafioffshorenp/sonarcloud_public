@@ -1,0 +1,167 @@
+.c-shifts {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.c-shifts__inner {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  position: relative;
+
+  margin-bottom: 210px;
+  margin-top: 90px;
+  padding: 124px 84px 100px;
+
+  background-color: $background-light;
+  border-radius: 48px;
+
+  text-align: center;
+
+  @include tablet {
+    align-items: center;
+
+    margin-bottom: 264px;
+    margin-top: 210px;
+    overflow-x: visible;
+  }
+
+  @include desktop {
+    margin-bottom: 156px;
+    margin-top: 164px;
+  }
+}
+
+.c-shifts__title {
+  font-family: $font-title;
+}
+
+.c-shifts__subtitle {
+  margin-top: 16px;
+  margin-bottom: 24px;
+
+  font-family: $font-body;
+  font-size: 16px;
+  line-height: 160%;
+  color: $grey;
+
+  @include tablet {
+    font-size: 24px;
+  }
+}
+
+.c-shifts__floaty {
+  position: absolute;
+
+  background: $white;
+  box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.1);
+  border-radius: 17px;
+
+  &:nth-child(1) {
+    top: 0;
+    left: 0;
+
+    height: 92px;
+    width: 200px;
+    padding: 12px;
+
+    transform: translate(-32px, -44px);
+
+    .c-shifts__image {
+      height: 65px;
+    }
+
+    @include desktop {
+      transform: translate(-170px, -168px);
+    }
+  }
+
+  &:nth-child(2) {
+    top: 0;
+    right: 0;
+
+    height: 80px;
+    width: 172px;
+    padding: 12px;
+
+    transform: translate(33%, -66%);
+
+    .c-shifts__image {
+      height: 56px;
+    }
+
+    @include desktop {
+      transform: translate(-140px, -122px);
+    }
+  }
+
+  &:nth-child(3) {
+    bottom: -3rem;
+    left: 0;
+
+    height: 80px;
+    width: 172px;
+    padding: 12px;
+
+    transform: translate(-50%, 0%);
+
+    .c-shifts__image {
+      height: 56px;
+    }
+
+    @include desktop {
+      transform: translate(46px, 50%);
+    }
+  }
+
+  &:nth-child(4) {
+    bottom: -3rem;
+    right: 0;
+
+    height: 132px;
+    width: 282px;
+    padding: 22px;
+
+    transform: translate(8px, 50%);
+
+    .c-shifts__image {
+      height: 92px;
+    }
+
+    @include desktop {
+      transform: translate(50%, 50%);
+    }
+  }
+
+  @include desktop {
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4) {
+      padding: 40px 28px;
+      height: 202px;
+      width: 394px;
+
+      .c-shifts__image {
+        height: 124px;
+      }
+    }
+  }
+}
+
+.c-shifts__image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+
+  &__inner {
+    width: 100%;
+
+    object-fit: cover;
+    object-position: top center;
+  }
+}

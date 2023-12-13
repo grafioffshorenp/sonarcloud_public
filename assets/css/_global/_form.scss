@@ -1,0 +1,457 @@
+form {
+  h3,
+  h4 {
+    color: $color-fifth;
+    margin-bottom: 16px;
+    margin-top: 32px;
+  }
+
+  .input--rich_text,
+  .input--html {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+  width: 100%;
+
+  @include tablet {
+    margin-bottom: 20px;
+  }
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  a {
+    color: $anchor-color;
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  .description,
+  .description:last-of-type,
+  .instructions {
+    color: $paragraph;
+    font-size: 1rem;
+    line-height: 160%;
+    margin-bottom: 0;
+    margin-top: 8px;
+
+    &.hidden {
+      display: none;
+    }
+
+    strong {
+      color: $paragraph-highlight;
+    }
+
+    a {
+      color: $paragraph-colored;
+    }
+  }
+
+  .btn {
+    margin-top: 8px;
+  }
+
+  .btn--inline {
+    margin-top: 4px;
+  }
+
+  .input-row {
+    &:first-of-type .input-wrapper {
+      &:first-of-type {
+        margin-top: 0;
+      }
+      @include tablet {
+        margin-top: 0;
+      }
+    }
+
+    &:last-of-type .input-wrapper {
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      @include tablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .schedule-fields-gig {
+    display: flex;
+    flex-direction: row;
+
+    @include tablet {
+      flex-direction: column;
+
+      .input-wrapper:first-of-type {
+        margin-top: 0;
+      }
+    }
+
+    @include until-tablet {
+      .input-wrapper:first-of-type {
+        margin-right: 8px;
+      }
+
+      .input-wrapper:last-of-type {
+        margin-left: 8px;
+      }
+    }
+  }
+}
+
+.input-wrapper--margin-bottom-mobile {
+  @include until-desktop {
+    margin-bottom: 48px;
+  }
+}
+
+.radio-wrapper,
+.input-group-one-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 5px;
+  width: 100%;
+
+  label {
+    display: flex;
+    flex: initial;
+
+    margin-bottom: 0;
+    margin-right: 24px;
+
+    @include tablet {
+      margin-right: 2rem;
+    }
+  }
+
+  input {
+    margin-bottom: 0;
+  }
+}
+
+.radio-group-all-one-line {
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    flex-direction: row;
+  }
+
+  label:first-child {
+    margin-right: 32px;
+
+    @include tablet {
+      white-space: nowrap;
+    }
+  }
+
+  label:last-child {
+    margin-right: 0;
+  }
+}
+
+.input-group-one-line {
+  @include until-tablet {
+    flex-direction: column;
+  }
+}
+
+.input-group-with-background {
+  background: $bg-color-lightest-alt;
+  border-radius: 6px;
+  padding: 16px 16px 4px;
+  margin-bottom: 16px;
+}
+
+.input-row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include tablet {
+    flex-direction: row;
+  }
+
+  > * {
+    flex: 1;
+
+    &:not(:first-of-type):not(:only-of-type) {
+      @include tablet {
+        margin-left: 16px;
+      }
+    }
+  }
+
+  .input--shrink {
+    flex: 0;
+  }
+
+  &.schedule-fields-gig {
+    @include tablet {
+      flex-direction: column;
+    }
+
+    > * {
+      &:not(:first-of-type):not(:only-of-type) {
+        @include tablet {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+.input-column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include tablet {
+    width: 48%;
+  }
+
+  &:not(:first-of-type):not(:only-of-type) {
+    @include tablet {
+      margin-left: auto;
+    }
+  }
+
+  &--wide {
+    margin-top: auto;
+    width: 100%;
+  }
+}
+
+.input--text,
+.input--datetime,
+.input--select,
+.input--phone,
+.input--email,
+.input--number,
+.input--textarea,
+.input-wrapper.input--text,
+.input-wrapper.input--datetime,
+.input-wrapper.input--select,
+.input-wrapper.input--phone,
+.input-wrapper.input--email,
+.input-wrapper.input--number,
+.input-wrapper.input--textarea {
+  margin-top: 5px;
+}
+
+.input--checkbox {
+  margin-bottom: 0.5rem;
+}
+
+.input--checkbox,
+.input-wrapper.input--checkbox {
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  label {
+    display: inline-block;
+    flex: 1;
+    order: 1;
+  }
+
+  .instructions {
+    width: 100%;
+  }
+}
+
+.input--select,
+.input-wrapper.input--select {
+  margin-top: 4px;
+}
+
+.address-reminder {
+  background: $bg-color-lightest-alt;
+  border-radius: 6px;
+  font-size: $label__font-size;
+  padding: 16px;
+  margin-top: 8px;
+}
+
+.manage-links {
+  display: flex;
+  font-size: $label__font-size;
+  justify-content: flex-start;
+  align-items: center;
+  color: $paragraph;
+  margin: 12px 0 24px;
+
+  > * {
+    margin: 0 8px 0 0;
+  }
+
+  > a {
+    color: $color-first;
+  }
+}
+
+.autocomplete-list {
+  background: $white;
+  border-radius: 5px;
+  box-shadow: 0 0 9px 1px rgba(0, 0, 0, 0.1);
+  left: 0;
+  max-height: 305px;
+  overflow-y: scroll;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(100%);
+  transition: background-color ease 0.2s;
+  width: 100%;
+  z-index: 1;
+
+  li {
+    color: #333;
+    font-size: 15px;
+    padding: 10px 16px;
+
+    &:first-child {
+      padding-top: 15px;
+    }
+
+    &:first-child {
+      padding-bottom: 15px;
+    }
+
+    &:hover {
+      background: $bg-color-hover;
+      cursor: pointer;
+    }
+  }
+}
+
+.close-form {
+  display: block;
+  text-align: center;
+  margin-top: 24px;
+
+  font-family: $font-body-bold;
+  color: $teal-dark;
+
+  @include on-event {
+    color: $blue;
+  }
+}
+
+.c-form-submit {
+  margin-top: 1rem;
+  display: grid;
+  row-gap: 16px;
+  column-gap: 16px;
+
+  &__button-previous {
+    display: none;
+
+    &--full-width {
+      grid-column: span 2;
+
+      @include tablet {
+        grid-column: initial;
+      }
+    }
+  }
+
+  &__button-next {
+    display: none;
+  }
+
+  &--onboarding {
+    grid-template-columns: repeat(2, 1fr);
+
+    @include tablet {
+      grid-template-columns: 128px 1fr 128px;
+      column-gap: 64px;
+    }
+  }
+
+  &--onboarding &__button-previous {
+    display: block;
+
+    @include tablet {
+      order: -1;
+    }
+  }
+
+  &--onboarding &__button-next {
+    display: block;
+  }
+
+  &--onboarding &__button {
+    grid-column: 1 / span 2;
+
+    @include tablet {
+      grid-column: 2 / span 1;
+    }
+  }
+}
+
+.c-input-row {
+  display: grid;
+  margin-bottom: 20px;
+  row-gap: 20px;
+  column-gap: 16px;
+
+  @include tablet {
+    margin-bottom: 28px;
+    row-gap: 28px;
+
+    &--columns-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+}
+
+.c-form-link {
+  display: flex;
+
+  color: $anchor-color;
+  text-decoration: underline;
+
+  @include on-event {
+    color: $blue;
+  }
+}
+
+.c-form-link__icon {
+  margin: 0 0.5rem;
+
+  color: $teal-dark;
+}
+
+.c-input-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+
+  width: 1rem;
+  height: 1rem;
+
+  background-color: $white;
+
+  font-size: 1rem;
+
+  transform: translateY(-50%);
+
+  &--teal {
+    pointer-events: none;
+    color: $teal-dark;
+  }
+}

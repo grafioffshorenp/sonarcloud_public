@@ -1,0 +1,232 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+@mixin basic-reset {
+  list-style: none;
+  background: none;
+  text-decoration: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin limit-lines($amount) {
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $amount;
+  -webkit-box-orient: vertical;
+}
+
+@mixin responsiveColumns($tablet, $dekstop) {
+  @include tablet {
+    grid-column: $tablet;
+  }
+  @include desktop {
+    grid-column: $dekstop;
+  }
+}
+
+@mixin wrapper() {
+  margin: 0 auto;
+  max-width: $wrapper-width;
+}
+
+@mixin container() {
+  margin: 0 auto;
+  width: 100%;
+  @include mobile-only {
+    padding-left: $mobile-container-spacing;
+    padding-right: $mobile-container-spacing;
+  }
+
+  @include tablet {
+    width: $container-tablet;
+  }
+
+  @include desktop {
+    width: $container-desktop;
+  }
+
+  @include desktop-wide {
+    width: $container-wide;
+  }
+}
+
+@mixin grid() {
+  @include tablet {
+    display: grid;
+    gap: 0 $gap;
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+@mixin grid-full($gap-horizontal: $gap) {
+  @include tablet {
+    display: grid;
+    gap: 0 $gap-horizontal;
+    grid-template-columns: 1fr repeat(12, calc(($container-tablet - 11 * $gap) / 12)) 1fr;
+  }
+
+  @include desktop {
+    grid-template-columns: 1fr repeat(12, calc(($container-desktop - 11 * $gap) / 12)) 1fr;
+  }
+
+  @include desktop-wide  {
+    grid-template-columns: 1fr repeat(12, calc(($container-wide - 11 * $gap) / 12)) 1fr;
+  }  
+}
+
+@mixin grid-custom($left: null, $right: null, $columns: 12) {
+  @include tablet {
+    display: grid;
+    grid-gap: 0 $gap;
+
+    $column-width: (($container-tablet - $gap * 11) / 12 * $columns) / $columns;
+    grid-template-columns: $left repeat($columns, $column-width) $right;
+  }
+
+  @include desktop {
+    $column-width: (($container-desktop - $gap * 11) / 12 * $columns) / $columns;
+    grid-template-columns: $left repeat($columns, $column-width) $right;
+  }
+}
+
+@mixin pop-over-menu($container-x-position, $triangle-x-position) {
+  // make sure to add position: relative to the related item
+  position: absolute;
+  top: calc(100% + 1rem);
+
+  min-width: 300px;
+  padding: 0.5rem 1.5rem;
+
+  background-color: $white;
+  border-radius: 6px;
+  filter: drop-shadow(0px 0px 14px rgba(0, 0, 0, 0.15));
+
+  transform: translateX($container-x-position);
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: $triangle-x-position;
+
+    width: 1rem;
+    height: 1rem;
+
+    background-color: $white;
+    border-radius: 3px 0 0 0;
+
+    transform: rotate(45deg) translateX(-50%);
+  }
+}
+
+@mixin basic-reset {
+  list-style: none;
+  background: none;
+  text-decoration: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin limit-lines($amount) {
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $amount;
+  -webkit-box-orient: vertical;
+}
+
+@mixin youbahn-shape($size) {
+  border-radius: 50% 50% 0 50%;
+  height: $size;
+  width: $size;
+}
+
+@mixin youbahn-shape-mirrored($size) {
+  border-radius: 50% 50% 50% 0;
+  height: $size;
+  width: $size;
+}
+
+@mixin youbahn-shape-180-deg($size) {
+  border-radius: 0 50% 50% 50%;
+  height: $size;
+  width: $size;
+}
+
+@mixin section-compact {
+  .section__inner {
+    h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      padding-bottom: 32px;
+    }
+  }
+}
+
+@mixin ie11() {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @content;
+  }
+}
+
+@mixin content-padding--mobile-only() {
+  @include mobile-only {
+    padding: 40px 16px;
+  }
+}
+
+@mixin cta-radial-gradient-animation($color) {
+  &::before {
+    position: absolute;
+    width: 150%;
+    left: -50%;
+    padding-top: 100%;
+    content: "";
+    background: radial-gradient(circle at center, $color, rgba($color, 0), rgba(0, 0, 0, 0));
+    z-index: -1;
+    transition: all 1s ease;
+  }
+
+  &:hover::before {
+    left: 25%;
+  }
+}
+
+@mixin text-rendering {
+  font-smooth: always;
+
+  -webkit-font-smoothing: antialiased;
+  -khtml-font-smoothing: antialiased;
+  -apple-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

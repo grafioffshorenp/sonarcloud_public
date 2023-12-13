@@ -1,0 +1,81 @@
+// DIVICE SIZES
+$mobile: 375;
+$tablet: 768;
+$desktop: 992;
+$desktop-wide: 1280;
+$desktop-big: 1800;
+
+// BASIC QUERIES
+@mixin mobile {
+  @media only screen and  (min-width: #{$mobile}px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and  (min-width: #{$tablet}px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: #{$desktop}px) {
+    @content;
+  }
+}
+
+@mixin desktop-wide {
+  @media only screen and (min-width: #{$desktop-wide}px) {
+    @content;
+  }
+}
+
+@mixin desktop-big {
+  @media only screen and (min-width: #{$desktop-big}px) {
+    @content;
+  }
+}
+
+// DEVICE ONLY QUERIES
+@mixin mobile-only {
+  @media only screen and (max-width: #{$tablet}px) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media only screen and (min-width: #{$tablet}px) and (max-width: #{$desktop}px) {
+    @content;
+  }
+}
+
+@mixin desktop-only {
+  @media only screen and (min-width: #{$tablet}px) {
+    @content;
+  }
+}
+
+// UNTIL SIZE QUERIES
+@mixin until-tablet {
+  @media only screen and (max-width: #{$tablet - 1}px) {
+    @content;
+  }
+}
+
+@mixin until-desktop {
+  @media only screen and (max-width: #{$desktop - 1}px) {
+    @content;
+  }
+}
+
+@mixin until-desktop-wide {
+  @media only screen and (max-width: #{$desktop-wide - 1}px) {
+    @content;
+  }
+}
+
+@mixin between-desk-desk-wide {
+  @media only screen and (min-width: #{$desktop}px) and (max-width: #{$desktop-wide}px) {
+    @content;
+  }
+}

@@ -1,0 +1,63 @@
+.c-register-landing {
+  display: flex;
+  flex-direction: column;
+
+  padding: 1.5rem;
+
+  @include tablet {
+    flex-direction: row;
+    gap: 2rem;
+
+    max-width: 968px;
+    margin: 0 auto;
+  }
+}
+
+.c-register-landing__column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 1.5rem;
+  margin: 0 auto 2rem;
+  width: 100%;
+  max-width: 768px;
+
+  background-color: $background-light;
+  border-radius: 6px;
+
+  @include tablet {
+    padding: 56px;
+  }
+}
+
+.c-register-landing__title {
+  margin-bottom: 1rem;
+
+  font-family: $font-title;
+  font-size: 24px;
+  line-height: 28px;
+  color: $teal-dark;
+}
+
+.c-register-landing__list {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 1rem;
+  padding: 0;
+
+  list-style: none;
+}
+
+.c-register-landing__item {
+  margin-bottom: 6px;
+
+  color: $text-color;
+  font-weight: 600;
+  line-height: 160%;
+}
+
+.c-register-landing__button {
+  justify-self: flex-start;
+}

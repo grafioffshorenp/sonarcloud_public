@@ -1,0 +1,369 @@
+label,
+.input-wrapper label {
+  color: $label-color;
+  display: flex;
+  font-size: $label__font-size;
+  line-height: 160%;
+  margin-bottom: 8px;
+  margin-top: 0;
+  position: relative;
+
+  &.label--primary {
+    font-family: $primary-font;
+    color: $anchor-color;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  &.label--increased-spacing {
+    margin-bottom: 16px;
+  }
+
+  &.inline-label {
+    display: inline-block;
+    margin-right: 16px;
+  }
+
+  &.required {
+    &:after {
+      content: "*";
+      color: $label-color-required;
+      cursor: text;
+      margin-left: 3px;
+    }
+  }
+
+  &.btn {
+    color: $white;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  a {
+    color: $dark-grey;
+  }
+
+  .asterix {
+    margin-left: 5px;
+  }
+
+  br {
+    display: none;
+  }
+
+  p,
+  p:last-of-type {
+    color: inherit;
+    line-height: inherit;
+    margin: 0;
+  }
+
+  @include tablet {
+    font-size: $label__font-size--tablet;
+  }
+}
+
+.label__text {
+  &.has-description {
+    .label__text--title {
+      color: $color-first;
+      font-weight: 500;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .label__text--description {
+      font-size: 0.875em;
+      line-height: 1.14;
+    }
+    .label__text--subdescription {
+      font-size: 0.875em;
+      line-height: 1.14;
+      // margin-top: 5px;
+    }
+  }
+}
+
+.input-wrapper {
+  textarea ~ label,
+  input ~ label,
+  select ~ label {
+    color: lighten($grey, 30%);
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    left: 16px;
+    margin: 0;
+    max-width: calc(100% - 32px);
+    padding: 1px 2px;
+    pointer-events: none;
+    position: absolute;
+    top: 18px;
+    transition: all 0.1s ease;
+    user-select: none;
+
+    &:hover {
+      cursor: text;
+    }
+
+    @include desktop {
+      top: 19px;
+    }
+  }
+
+  input:not([type="checkbox"]):not([type="radio"]) ~ label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  textarea:focus ~ label,
+  textarea:not(:placeholder-shown) ~ label,
+  input:focus ~ label,
+  input:not(:placeholder-shown) ~ label,
+  input:disabled ~ label,
+  input[readonly] ~ label,
+  select ~ label {
+    color: $label-color;
+    font-size: 13px;
+    line-height: 1;
+    top: -6px;
+    transition: color 0.2s ease;
+    text-shadow: $label-text-shadow;
+
+    a {
+      text-shadow: none;
+    }
+  }
+
+  textarea:focus ~ label,
+  input:focus ~ label {
+    color: $label-color-focus;
+  }
+
+  input:disabled ~ label,
+  input[readonly] ~ label,
+  select:disabled ~ label {
+    background: transparent;
+    color: $grey;
+    top: 7px;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    + label {
+      pointer-events: auto;
+    }
+  }
+
+  &.input--has-error,
+  .input--has-error {
+    textarea ~ label,
+    input ~ label {
+      color: $label-color-error;
+
+      &:after {
+        color: $label-color-error;
+      }
+    }
+  }
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.autocomplete-list {
+  background: $white;
+  border-radius: 5px;
+  box-shadow: 0 0 9px 1px rgba(0, 0, 0, 0.1);
+  left: 0;
+  max-height: 305px;
+  overflow-y: scroll;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(100%);
+  transition: background-color ease 0.2s;
+  width: 100%;
+  z-index: 1;
+
+  li {
+    color: $text-color;
+    font-size: 15px;
+    padding: 10px 16px;
+
+    &:first-child {
+      padding-top: 15px;
+    }
+
+    &:first-child {
+      padding-bottom: 15px;
+    }
+
+    &:hover {
+      background: $background-light;
+      cursor: pointer;
+    }
+  }
+}
+
+.c-form-submit {
+  margin-top: 16px;
+  display: grid;
+  row-gap: 16px;
+  column-gap: 16px;
+
+  &__button-previous {
+    display: none;
+  }
+
+  &__button-next {
+    display: none;
+  }
+
+  &--onboarding {
+    grid-template-columns: repeat(2, 1fr);
+
+    @include tablet {
+      grid-template-columns: 128px 1fr 128px;
+      column-gap: 64px;
+    }
+  }
+
+  &--onboarding &__button-previous {
+    display: block;
+
+    @include tablet {
+      order: -1;
+    }
+  }
+
+  &--onboarding &__button-next {
+    display: block;
+  }
+
+  &--onboarding &__button {
+    grid-column: 1 / span 2;
+
+    @include tablet {
+      grid-column: 2 / span 1;
+    }
+  }
+}
+
+.c-input-row {
+  display: grid;
+  margin-bottom: 20px;
+  row-gap: 20px;
+  column-gap: 16px;
+
+  @include tablet {
+    margin-bottom: 28px;
+    row-gap: 28px;
+
+    &--columns-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+.c-form-input-container {
+  position: relative;
+}
+
+.c-input {
+  position: relative;
+
+  width: 100%;
+  // Had to use important due to bad specificity
+  height: 56px !important;
+  margin: 0.25rem 0;
+  padding: 0.5rem 1rem;
+
+  background-color: $white;
+  border-radius: 5px;
+  border: 5px;
+
+  color: $text-color;
+  font-size: 1rem;
+
+  &--rounded-left {
+    border-radius: 3px 0 0 3px !important;
+  }
+
+  &--rounded-right {
+    border-radius: 0 3px 3px 0 !important;
+  }
+
+  &--grey-border {
+    border-radius: 0 !important;
+    border-left: 1px solid $grey;
+  }
+
+  &--with-icon {
+    padding-right: 3rem;
+  }
+}
+
+.c-input__icon {
+  position: absolute;
+  top: 5px;
+  right: 0;
+
+  padding: 1.25rem 0.75rem;
+
+  color: $teal-dark;
+  font-size: 1rem;
+
+  @include tablet {
+    padding: 1.25rem 1rem;
+  }
+}
+
+.c-submit {
+  margin-top: 0.25rem;
+
+  background-color: $orange;
+
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: $font-title;
+  color: $white;
+
+  cursor: pointer;
+
+  transition: 0.2s background-color;
+
+  @include on-event {
+    background-color: darken($orange, 7%);
+  }
+}
+
+.c-search-form__inner {
+  display: flex;
+  flex-direction: column;
+
+  &--inline {
+    input {
+      // Had to use important due to bad specificity
+
+      &::placeholder {
+        color: $grey !important;
+      }
+
+      @include tablet {
+        width: 200px !important;
+      }
+    }
+
+    @include tablet {
+      flex-direction: row;
+
+      .c-submit {
+        width: 200px;
+      }
+    }
+  }
+}

@@ -1,0 +1,110 @@
+.c-btn,
+.c-button {
+  display: inline-block;
+
+  width: 100%;
+  padding: 1rem;
+
+  background-color: $orange;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+
+  font-family: $font-title;
+  font-size: 1.1rem;
+  line-height: 1.4rem;
+  text-align: center;
+  text-decoration: none;
+  color: $white;
+
+  transition: 0.2s background-color, 0.2s color, 0.2s border-color;
+
+  &--full {
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  @include tablet {
+    max-width: 330px;
+  }
+
+  @include on-event {
+    background-color: darken($orange, 7%);
+    color: $white;
+  }
+
+  &--with-icon {
+    i {
+      margin-left: 1rem;
+
+      // small fix to get it centered
+      transform: translateY(2px);
+    }
+  }
+
+  &--fixed-width {
+    @include tablet {
+      min-width: 330px;
+    }
+  }
+
+  &--full-width {
+    @include tablet {
+      max-width: 100%;
+    }
+  }
+
+  &--with-border {
+    background-color: transparent;
+    border: 2px solid $teal-dark;
+
+    color: $teal-dark;
+
+    @include on-event {
+      border-color: $blue;
+      background-color: transparent;
+
+      color: $blue;
+    }
+  }
+
+  &--disabled {
+    @extend .c-btn--with-border;
+    background-color: $light-grey;
+    pointer-events: none;
+  }
+
+  &--as-text-link {
+    padding: 0;
+
+    background-color: transparent;
+
+    font-family: $font-sub-title;
+    text-align: initial;
+    font-weight: 500;
+    color: $teal-dark;
+
+    @include on-event {
+      color: $blue;
+      background-color: transparent;
+    }
+  }
+
+  &--small {
+    padding: 0.5rem 1rem;
+  }
+
+  &--text-slim {
+    font-weight: 400;
+    font-family: $font-body;
+  }
+
+  &--text-centered {
+    text-align: center;
+  }
+
+  &--underline {
+    text-decoration: underline;
+  }
+}

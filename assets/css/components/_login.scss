@@ -1,0 +1,69 @@
+.c-login {
+  padding: 1.5rem;
+
+  // Consol
+  .input--text {
+    > input {
+      margin-bottom: 0.5rem;
+
+      @include tablet {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  .input--password {
+    margin-bottom: 0.5rem;
+
+    @include tablet {
+      margin-bottom: 0.8rem;
+    }
+  }
+
+  button[type="submit"] {
+    @extend .c-btn;
+    @extend .c-btn--full-width;
+
+    display: block;
+
+    margin-top: 0.5rem;
+
+    @include tablet {
+      margin-top: 20px;
+    }
+  }
+}
+
+.c-login__content {
+  padding: 1.5rem;
+  margin: 0 auto;
+  max-width: 768px;
+
+  background-color: $background-light;
+  border-radius: 6px;
+
+  @include tablet {
+    padding: 32px 80px;
+  }
+}
+
+.c-login__title {
+  margin-bottom: 1rem;
+
+  @include tablet {
+    margin-bottom: 2rem;
+  }
+}
+
+// Consol
+.consol-login {
+  > form {
+    > a {
+      @extend .c-btn;
+      @extend .c-btn--as-text-link;
+      @extend .c-btn--underline;
+      @extend .c-btn--text-slim;
+      @extend .c-btn--full-width;
+    }
+  }
+}

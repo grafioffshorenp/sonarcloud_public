@@ -1,0 +1,16 @@
+select:not([multiple]) {
+  background-color: $white;
+  background-image: url("/assets/svg/arrow-down.svg");
+  background-position: right 16px top 50%, 0 0;
+  background-repeat: no-repeat;
+  background-size: 9px, 100%;
+  cursor: pointer;
+  overflow: hidden;
+  padding-right: 32px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &[class^="flatpickr-"] {
+    display: inline-block;
+  }
+}

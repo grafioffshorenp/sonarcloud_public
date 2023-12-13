@@ -1,0 +1,430 @@
+.page-details {
+  &__section {
+    margin: 2rem 0;
+  }
+
+  &__properties {
+    margin-bottom: 10px;
+
+    .header,
+    .body {
+      margin: 0;
+    }
+
+    .header {
+      color: $grey;
+      font-size: 0.875rem;
+      line-height: 140%;
+    }
+
+    .body {
+      color: $text-color;
+      font-weight: 700;
+      word-break: break-word;
+
+      &--light {
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.router-link-exact-active {
+  @apply bg-white font-bold;
+}
+
+.page-details {
+  .page__footer {
+    .btn {
+      margin: 0;
+
+      @include until-desktop-wide {
+        max-width: 100%;
+      }
+
+      @include desktop-wide {
+        margin-left: auto;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+  }
+
+  .page-details__section {
+    border-bottom: 1px solid $border-color-light;
+    border-radius: 5px;
+    box-shadow: $box-shadow;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+
+    @include until-tablet {
+      background: $white;
+    }
+
+    @include tablet {
+      border-radius: 0;
+      box-shadow: none;
+      margin-bottom: 32px;
+      padding: 0;
+    }
+
+    &--more-bottom-padding {
+      padding-bottom: 24px;
+    }
+
+    &--no-bottom-border {
+      border-bottom: none;
+    }
+
+    &--stroke {
+      border-bottom: none;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 2px;
+        background-color: $lightest-grey;
+
+        @include until-tablet {
+          width: calc(100% - 48px);
+          margin-left: 24px;
+        }
+      }
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 24px;
+
+      &:not(:first-of-type) {
+        @include tablet {
+          margin-top: 28px;
+        }
+      }
+    }
+
+    table {
+      margin-top: 16px;
+      margin-bottom: 24px;
+
+      @include tablet {
+        display: block;
+      }
+
+      th {
+        color: $dark-grey;
+        padding-bottom: 16px;
+      }
+
+      tr {
+        &.disabled {
+          td {
+            color: $lightest-grey;
+          }
+        }
+      }
+    }
+
+    >img,
+    >.img,
+    >div>img,
+    >div>.img {
+      display: block;
+      margin: 0 auto 16px auto;
+
+      ~h2 {
+        margin: 0;
+      }
+    }
+
+    p.accept-label {
+      display: none;
+      color: $header-color;
+      font-family: $primary-font;
+      font-weight: 600;
+      margin-bottom: 16px;
+
+      &.accepted,
+      &.contracted,
+      &.rejected {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+        i {
+          font-size: 24px;
+          margin-right: 8px;
+        }
+      }
+
+      @include tablet {
+        margin-bottom: 24px;
+      }
+    }
+
+    p.repeat-schedule {
+      margin-bottom: 0;
+    }
+
+    &--centered {
+      align-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .columns-row {
+      display: flex;
+      flex-direction: column;
+
+      @include tablet {
+        flex-direction: row;
+      }
+
+      @include desktop {
+        flex-direction: column;
+      }
+
+      @include desktop-wide {
+        flex-direction: row;
+      }
+    }
+
+    &.columns,
+    .columns {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 24px;
+      width: calc(50% - 8px);
+
+      &:first-of-type {
+        @include until-tablet {
+          margin-top: 0;
+        }
+      }
+
+      @include tablet {
+        width: calc(50% - 16px);
+      }
+
+      @include desktop {
+        width: calc(50% - 24px);
+      }
+
+      &--wide {
+        width: 100%;
+
+        @include tablet {
+          margin-bottom: 24px;
+        }
+      }
+
+      &--narrow {
+        width: calc(33% - 8px);
+
+        @include tablet {
+          width: calc(33% - 16px);
+        }
+
+        @include desktop {
+          width: calc(33% - 24px);
+        }
+      }
+
+      &--single {
+        @include until-tablet {
+          width: 100%;
+        }
+
+        @include tablet {
+          margin-top: 0;
+        }
+
+        @include desktop {
+          margin-top: 12px;
+          width: 100%;
+        }
+
+        @include desktop-wide {
+          margin-top: 0;
+          width: calc(50% - 24px);
+        }
+      }
+    }
+  }
+
+  &__properties {
+    margin-bottom: 10px;
+
+    .header,
+    .body {
+      margin: 0;
+    }
+
+    .header {
+      color: $grey;
+      font-size: 14px;
+      line-height: 140%;
+    }
+
+    .body {
+      color: $dark-grey;
+      font-weight: 500;
+      word-break: break-word;
+
+      &--light {
+        font-weight: 400;
+      }
+    }
+
+    .experience {
+      display: block;
+      line-height: 120%;
+
+      &:first-of-type {
+        margin-top: 3px;
+      }
+
+      &:not(:last-of-type) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  table {
+    border: none;
+    margin-bottom: 0;
+
+    th,
+    td {
+      background: none;
+      border: none;
+      padding: 4px 0;
+
+      &:not(:last-of-type) {
+        padding-right: 32px;
+      }
+    }
+
+    th {
+      padding-bottom: 5px;
+    }
+  }
+}
+
+.page__sidebar {
+  .panel__anchor {
+    i {
+      color: $icon-color-alt;
+    }
+  }
+}
+
+.page-edit-vacancy,
+.page-create-template {
+  .page-details {
+    form {
+      margin-top: 40px;
+    }
+  }
+
+  .page__sidebar {
+    margin-bottom: 16px;
+
+    @include tablet {
+      margin-bottom: 32px;
+    }
+
+    .page__content {
+      margin: 0;
+    }
+  }
+
+  .page__content.panel {
+    .panel__anchor {
+      font-family: $primary-font;
+      font-weight: 600;
+      margin: 0;
+
+      &.expanded {
+        margin-bottom: 24px;
+      }
+
+      i {
+        @include desktop {
+          display: none;
+        }
+      }
+
+      @include desktop {
+        pointer-events: none;
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* // I have to use !important because we are in specificity hell in the code above. */
+
+.page-details {
+  &__section {
+    &--hide-bottom {
+      border-bottom: none !important;
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+.c-card {
+  padding: 24px;
+  background: $white;
+  border-radius: 6px;
+  box-shadow: $box-shadow;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+
+  @include desktop {
+    padding: 48px;
+    min-height: 200px;
+  }
+
+  &--hide-styling {
+    padding: unset;
+    background: transparent;
+    border-radius: unset;
+    box-shadow: unset;
+  }
+
+  &__inner-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 24px 10px;
+
+    background-color: $background-light;
+    border-radius: 6px;
+
+    @include tablet {
+      padding: 32px;
+    }
+  }
+}

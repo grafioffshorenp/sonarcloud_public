@@ -1,0 +1,32 @@
+.c-image {
+  width: 100%;
+  border-radius: 999vh;
+  overflow: hidden;
+
+  image{
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  &--round {
+    padding-bottom: 100%;
+    height: unset;
+    position: relative;
+  }
+
+  &--pinch-bottom-right {
+    border-radius: 999vh 999vh 0 999vh;
+    padding-bottom: calc(100% / 668 * 530.22);
+    height: unset;
+    position: relative;
+  }
+  
+  &--pinch-top-left {
+    border-radius: 0 999vh 999vh 999vh;
+    padding-bottom: calc(100% / 668 * 530.22);
+    height: unset;
+    position: relative;
+  }
+}
