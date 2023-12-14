@@ -1,5 +1,0 @@
-on:
-  push:
-    branches:
-      - main        # The default branch
-      - *    # The other branches to be analyzed

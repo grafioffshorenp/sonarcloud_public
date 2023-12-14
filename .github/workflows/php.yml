@@ -1,9 +1,0 @@
-name: PHP Composer
-
-on:
-  push:
-    branches: [ "master", "development", "branch-1"]
-    
-  pull_request:
-    branches: [ "master", "development", "branch-1"]
-
