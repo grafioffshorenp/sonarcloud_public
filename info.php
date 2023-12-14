@@ -8,6 +8,7 @@ changes for branch-1
 changes for development
 
 echo "changes in file";
+echo "changes in file";
 
 ?>
 
